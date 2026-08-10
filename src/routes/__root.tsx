@@ -77,19 +77,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Ayushi & Vishwas · Wedding Invitation" },
+      { title: "Ayushi & Vishwas · Wedding Invitation, Jamshedpur" },
       {
         name: "description",
         content:
-          "The digital wedding invitation of Ayushi & Vishwas — 24th & 25th, Hill View Resort, Jamshedpur.",
+          "Ayushi & Vishwas invite you to their wedding on the 24th & 25th at Hill View Resort, Jamshedpur — haldi, sangeet, engagement and the wedding ceremony.",
       },
-      { property: "og:title", content: "Ayushi & Vishwas · Wedding Invitation" },
+      { property: "og:title", content: "Ayushi & Vishwas · Wedding Invitation, Jamshedpur" },
       {
         property: "og:description",
-        content: "Two hearts. One beautiful beginning. Jamshedpur, Jharkhand.",
+        content: "Ayushi & Vishwas invite you to their wedding on the 24th & 25th at Hill View Resort, Jamshedpur — haldi, sangeet, engagement and the wedding ceremony.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Ayushi & Vishwas · Wedding Invitation, Jamshedpur" },
+      { name: "twitter:description", content: "Ayushi & Vishwas invite you to their wedding on the 24th & 25th at Hill View Resort, Jamshedpur — haldi, sangeet, engagement and the wedding ceremony." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a02f248edc5f8a9a52d0e4ea9a5d7333/id-preview-f3f93f90--8cfb72f7-3df3-4e77-87fb-660631d8a6f7.lovable.app-1786356508907.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a02f248edc5f8a9a52d0e4ea9a5d7333/id-preview-f3f93f90--8cfb72f7-3df3-4e77-87fb-660631d8a6f7.lovable.app-1786356508907.png" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },

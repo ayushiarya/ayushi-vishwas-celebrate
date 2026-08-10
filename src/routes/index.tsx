@@ -29,11 +29,11 @@ export const Route = createFileRoute("/")({
         content:
           "Ayushi & Vishwas invite you to their wedding on the 24th & 25th at Hill View Resort, Jamshedpur — haldi, sangeet, engagement and the wedding ceremony.",
       },
-      { property: "og:title", content: "Ayushi & Vishwas · Wedding Invitation" },
+      { property: "og:title", content: "Ayushi & Vishwas · Wedding Invitation, Jamshedpur" },
       {
         property: "og:description",
         content:
-          "Two hearts. One beautiful beginning. Join us on the 24th & 25th at Hill View Resort, Jamshedpur.",
+          "Ayushi & Vishwas invite you to their wedding on the 24th & 25th at Hill View Resort, Jamshedpur — haldi, sangeet, engagement and the wedding ceremony.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
