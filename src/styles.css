@@ -28,9 +28,11 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-sage: var(--sage);
-  --color-emerald: var(--emerald);
-  --color-champagne: var(--champagne);
+  --color-deep-crimson: var(--deep-crimson);
+  --color-golden-amber: var(--golden-amber);
+  --color-emerald-green: var(--emerald-green);
+  --color-saffron: var(--saffron);
+  --color-rose-pink: var(--rose-pink);
   --color-cream: var(--cream);
   --color-charcoal: var(--charcoal);
   --font-display: "Cormorant Garamond", Georgia, serif;
@@ -41,31 +43,34 @@
 :root {
   --radius: 0.25rem;
 
-  --cream: oklch(0.98 0.006 90);
-  --sage: oklch(0.48 0.062 142);
-  --emerald: oklch(0.52 0.088 155);
-  --champagne: oklch(0.75 0.048 82);
-  --charcoal: oklch(0.25 0.01 240);
+  /* Rich Indian Festival Colors */
+  --deep-crimson: oklch(0.42 0.14 12);
+  --golden-amber: oklch(0.68 0.12 72);
+  --emerald-green: oklch(0.48 0.12 155);
+  --saffron: oklch(0.75 0.18 60);
+  --rose-pink: oklch(0.72 0.11 25);
+  --cream: oklch(0.97 0.008 95);
+  --charcoal: oklch(0.22 0.01 240);
 
   --background: var(--cream);
   --foreground: var(--charcoal);
-  --card: oklch(0.995 0.004 90);
+  --card: oklch(0.995 0.004 95);
   --card-foreground: var(--charcoal);
   --popover: var(--card);
   --popover-foreground: var(--charcoal);
-  --primary: var(--sage);
-  --primary-foreground: oklch(0.98 0.01 90);
-  --secondary: oklch(0.92 0.018 140);
-  --secondary-foreground: var(--sage);
-  --muted: oklch(0.94 0.01 80);
-  --muted-foreground: oklch(0.52 0.028 150);
-  --accent: var(--emerald);
-  --accent-foreground: oklch(0.98 0.01 90);
+  --primary: var(--deep-crimson);
+  --primary-foreground: oklch(0.98 0.01 95);
+  --secondary: var(--saffron);
+  --secondary-foreground: var(--charcoal);
+  --muted: oklch(0.92 0.015 75);
+  --muted-foreground: oklch(0.48 0.03 150);
+  --accent: var(--golden-amber);
+  --accent-foreground: var(--charcoal);
   --destructive: oklch(0.55 0.2 25);
-  --destructive-foreground: oklch(0.98 0.01 90);
-  --border: oklch(0.88 0.02 120);
-  --input: oklch(0.88 0.02 120);
-  --ring: var(--champagne);
+  --destructive-foreground: oklch(0.98 0.01 95);
+  --border: oklch(0.85 0.03 70);
+  --input: oklch(0.85 0.03 70);
+  --ring: var(--golden-amber);
 }
 
 @layer base {
@@ -84,8 +89,9 @@
     font-weight: 300;
     letter-spacing: 0.01em;
     background-image:
-      radial-gradient(circle at 15% 10%, color-mix(in oklab, var(--emerald) 18%, transparent), transparent 45%),
-      radial-gradient(circle at 85% 80%, color-mix(in oklab, var(--champagne) 14%, transparent), transparent 48%);
+      radial-gradient(circle at 20% 15%, color-mix(in oklab, var(--rose-pink) 22%, transparent), transparent 40%),
+      radial-gradient(circle at 80% 85%, color-mix(in oklab, var(--golden-amber) 18%, transparent), transparent 45%),
+      radial-gradient(circle at 10% 80%, color-mix(in oklab, var(--emerald-green) 15%, transparent), transparent 40%);
     background-attachment: fixed;
   }
 
@@ -103,7 +109,7 @@
   font-weight: 400;
   letter-spacing: 0.42em;
   text-transform: uppercase;
-  color: color-mix(in oklab, var(--sage) 65%, transparent);
+  color: color-mix(in oklab, var(--deep-crimson) 75%, transparent);
 }
 
 @utility script {
@@ -115,28 +121,28 @@
 @utility paper {
   background-color: var(--card);
   box-shadow:
-    0 1px 0 color-mix(in oklab, var(--champagne) 35%, transparent),
-    0 30px 60px -40px color-mix(in oklab, var(--sage) 35%, transparent);
+    0 1px 0 color-mix(in oklab, var(--golden-amber) 40%, transparent),
+    0 30px 60px -40px color-mix(in oklab, var(--deep-crimson) 38%, transparent);
 }
 
 @utility rule-gold {
-  height: 1px;
+  height: 2px;
   background: linear-gradient(
     to right,
     transparent,
-    color-mix(in oklab, var(--champagne) 80%, transparent),
+    color-mix(in oklab, var(--golden-amber) 90%, transparent),
     transparent
   );
 }
 
 @utility ornament-frame {
   position: relative;
-  border: 1px solid color-mix(in oklab, var(--champagne) 55%, transparent);
+  border: 1.5px solid color-mix(in oklab, var(--golden-amber) 65%, transparent);
   &::after {
     content: "";
     position: absolute;
     inset: 6px;
-    border: 1px solid color-mix(in oklab, var(--sage) 14%, transparent);
+    border: 1px solid color-mix(in oklab, var(--deep-crimson) 18%, transparent);
     pointer-events: none;
   }
 }
@@ -159,7 +165,7 @@
     opacity: 0;
   }
   10% {
-    opacity: 0.75;
+    opacity: 0.8;
   }
   100% {
     transform: translate3d(var(--drift, 40px), 110vh, 0) rotate(320deg);
@@ -183,8 +189,8 @@
   border-radius: 60% 10% 60% 10%;
   background: linear-gradient(
     140deg,
-    color-mix(in oklab, var(--emerald) 80%, white),
-    color-mix(in oklab, var(--sage) 40%, transparent)
+    color-mix(in oklab, var(--rose-pink) 85%, white),
+    color-mix(in oklab, var(--deep-crimson) 45%, transparent)
   );
   animation: petal-fall linear infinite;
 }
