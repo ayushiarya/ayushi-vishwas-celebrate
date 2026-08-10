@@ -28,13 +28,6 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-deep-crimson: var(--deep-crimson);
-  --color-golden-amber: var(--golden-amber);
-  --color-emerald-green: var(--emerald-green);
-  --color-saffron: var(--saffron);
-  --color-rose-pink: var(--rose-pink);
-  --color-cream: var(--cream);
-  --color-charcoal: var(--charcoal);
   --font-display: "Cormorant Garamond", Georgia, serif;
   --font-script: "Italiana", "Cormorant Garamond", serif;
   --font-body: "Jost", system-ui, sans-serif;
@@ -43,34 +36,36 @@
 :root {
   --radius: 0.25rem;
 
-  /* Rich Indian Festival Colors */
-  --deep-crimson: oklch(0.42 0.14 12);
-  --golden-amber: oklch(0.68 0.12 72);
-  --emerald-green: oklch(0.48 0.12 155);
-  --saffron: oklch(0.75 0.18 60);
-  --rose-pink: oklch(0.72 0.11 25);
-  --cream: oklch(0.97 0.008 95);
-  --charcoal: oklch(0.22 0.01 240);
+  /* Premium Wedding Stationery Palette */
+  --ivory: oklch(0.98 0.006 90);
+  --champagne: oklch(0.96 0.008 85);
+  --wine: oklch(0.34 0.105 15);
+  --blush: oklch(0.86 0.042 22);
+  --gold: oklch(0.72 0.085 75);
+  --antique-gold: oklch(0.65 0.075 65);
+  --ink: oklch(0.25 0.018 35);
+  --sage: oklch(0.52 0.045 145);
+  --rose: oklch(0.68 0.055 20);
 
-  --background: var(--cream);
-  --foreground: var(--charcoal);
-  --card: oklch(0.995 0.004 95);
-  --card-foreground: var(--charcoal);
+  --background: var(--ivory);
+  --foreground: var(--ink);
+  --card: oklch(0.995 0.003 90);
+  --card-foreground: var(--ink);
   --popover: var(--card);
-  --popover-foreground: var(--charcoal);
-  --primary: var(--deep-crimson);
-  --primary-foreground: oklch(0.98 0.01 95);
-  --secondary: var(--saffron);
-  --secondary-foreground: var(--charcoal);
-  --muted: oklch(0.92 0.015 75);
-  --muted-foreground: oklch(0.48 0.03 150);
-  --accent: var(--golden-amber);
-  --accent-foreground: var(--charcoal);
+  --popover-foreground: var(--ink);
+  --primary: var(--wine);
+  --primary-foreground: var(--ivory);
+  --secondary: var(--blush);
+  --secondary-foreground: var(--wine);
+  --muted: oklch(0.94 0.012 70);
+  --muted-foreground: oklch(0.52 0.025 50);
+  --accent: var(--gold);
+  --accent-foreground: var(--ink);
   --destructive: oklch(0.55 0.2 25);
-  --destructive-foreground: oklch(0.98 0.01 95);
-  --border: oklch(0.85 0.03 70);
-  --input: oklch(0.85 0.03 70);
-  --ring: var(--golden-amber);
+  --destructive-foreground: oklch(0.98 0.01 85);
+  --border: oklch(0.88 0.02 60);
+  --input: oklch(0.88 0.02 60);
+  --ring: var(--antique-gold);
 }
 
 @layer base {
@@ -88,11 +83,28 @@
     font-family: var(--font-body);
     font-weight: 300;
     letter-spacing: 0.01em;
+    /* Subtle textile pattern overlay */
     background-image:
-      radial-gradient(circle at 20% 15%, color-mix(in oklab, var(--rose-pink) 22%, transparent), transparent 40%),
-      radial-gradient(circle at 80% 85%, color-mix(in oklab, var(--golden-amber) 18%, transparent), transparent 45%),
-      radial-gradient(circle at 10% 80%, color-mix(in oklab, var(--emerald-green) 15%, transparent), transparent 40%);
+      repeating-linear-gradient(90deg, transparent, transparent 2px, color-mix(in oklab, var(--gold) 2%, transparent) 2px, color-mix(in oklab, var(--gold) 2%, transparent) 4px),
+      repeating-linear-gradient(0deg, transparent, transparent 2px, color-mix(in oklab, var(--gold) 1.5%, transparent) 2px, color-mix(in oklab, var(--gold) 1.5%, transparent) 4px),
+      radial-gradient(circle at 15% 10%, color-mix(in oklab, var(--blush) 18%, transparent), transparent 50%),
+      radial-gradient(circle at 85% 90%, color-mix(in oklab, var(--antique-gold) 12%, transparent), transparent 50%);
     background-attachment: fixed;
+    position: relative;
+  }
+
+  /* Watermark effect */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(circle at 50% 50%, color-mix(in oklab, var(--gold) 1%, transparent), transparent 70%);
+    pointer-events: none;
+    z-index: -1;
   }
 
   h1,
@@ -100,98 +112,176 @@
   h3 {
     font-family: var(--font-display);
     font-weight: 300;
+    letter-spacing: 0.015em;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 8vw, 4rem);
+    line-height: 1.1;
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    line-height: 1.2;
+  }
+
+  h3 {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
   }
 }
 
+/* Premium Typography & Spacing */
 @utility eyebrow {
   font-family: var(--font-body);
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: 400;
-  letter-spacing: 0.42em;
+  letter-spacing: 0.55em;
   text-transform: uppercase;
-  color: color-mix(in oklab, var(--deep-crimson) 75%, transparent);
+  color: color-mix(in oklab, var(--wine) 70%, transparent);
+  word-spacing: 0.25em;
 }
 
 @utility script {
   font-family: var(--font-script);
-  letter-spacing: 0.02em;
-  line-height: 1.05;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 1.08;
+  font-size: 1.05em;
 }
 
+/* Premium Paper & Card Styling */
 @utility paper {
   background-color: var(--card);
+  backdrop-filter: blur(0.5px);
   box-shadow:
-    0 1px 0 color-mix(in oklab, var(--golden-amber) 40%, transparent),
-    0 30px 60px -40px color-mix(in oklab, var(--deep-crimson) 38%, transparent);
+    0 2px 0 color-mix(in oklab, var(--antique-gold) 35%, transparent),
+    0 8px 16px -8px color-mix(in oklab, var(--wine) 20%, transparent),
+    inset 0 1px 0 color-mix(in oklab, white 50%, transparent);
+  border: 1px solid color-mix(in oklab, var(--gold) 15%, transparent);
 }
 
+/* Ornamental Dividers */
 @utility rule-gold {
-  height: 2px;
+  height: 1.5px;
   background: linear-gradient(
     to right,
-    transparent,
-    color-mix(in oklab, var(--golden-amber) 90%, transparent),
-    transparent
+    transparent 0%,
+    color-mix(in oklab, var(--gold) 40%, transparent) 15%,
+    color-mix(in oklab, var(--antique-gold) 80%, transparent) 50%,
+    color-mix(in oklab, var(--gold) 40%, transparent) 85%,
+    transparent 100%
   );
+  position: relative;
 }
 
+@utility rule-gold::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 4px;
+  height: 4px;
+  background-color: var(--antique-gold);
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+/* Decorative Border Frames */
 @utility ornament-frame {
   position: relative;
-  border: 1.5px solid color-mix(in oklab, var(--golden-amber) 65%, transparent);
+  border: 2px solid color-mix(in oklab, var(--antique-gold) 60%, transparent);
+  padding: 1px;
+  background: linear-gradient(135deg, 
+    color-mix(in oklab, var(--ivory) 100%, transparent),
+    color-mix(in oklab, var(--champagne) 50%, transparent),
+    color-mix(in oklab, var(--ivory) 100%, transparent));
+  
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    border: 1px solid color-mix(in oklab, var(--wine) 12%, transparent);
+    pointer-events: none;
+  }
+
+  /* Corner ornaments */
   &::after {
     content: "";
     position: absolute;
     inset: 6px;
-    border: 1px solid color-mix(in oklab, var(--deep-crimson) 18%, transparent);
+    background-image: 
+      radial-gradient(circle at 0% 0%, color-mix(in oklab, var(--gold) 30%, transparent) 2px, transparent 2px),
+      radial-gradient(circle at 100% 0%, color-mix(in oklab, var(--gold) 30%, transparent) 2px, transparent 2px),
+      radial-gradient(circle at 0% 100%, color-mix(in oklab, var(--gold) 30%, transparent) 2px, transparent 2px),
+      radial-gradient(circle at 100% 100%, color-mix(in oklab, var(--gold) 30%, transparent) 2px, transparent 2px);
+    background-size: 20px 20px;
+    background-position: 0 0, 100% 0, 0 100%, 100% 100%;
+    background-repeat: no-repeat;
     pointer-events: none;
   }
 }
 
+/* Smooth Reveal Animation */
 @utility reveal {
   opacity: 0;
-  transform: translateY(28px);
+  transform: translateY(24px);
   transition:
-    opacity 1.1s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+    opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   &[data-visible="true"] {
     opacity: 1;
-    transform: none;
+    transform: translateY(0);
   }
 }
 
+/* Floral Petal Animations */
 @keyframes petal-fall {
   0% {
-    transform: translate3d(0, -10vh, 0) rotate(0deg);
+    transform: translate3d(0, -10vh, 0) rotate(0deg) scale(1);
     opacity: 0;
   }
-  10% {
+  5% {
+    opacity: 1;
+  }
+  95% {
     opacity: 0.8;
   }
   100% {
-    transform: translate3d(var(--drift, 40px), 110vh, 0) rotate(320deg);
+    transform: translate3d(var(--drift, 40px), 110vh, 0) rotate(320deg) scale(0.3);
     opacity: 0;
   }
 }
 
 @keyframes soft-float {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-12px);
   }
 }
 
+@keyframes shimmer {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Floral Petals */
 @utility petal {
   position: absolute;
   top: -10vh;
   border-radius: 60% 10% 60% 10%;
   background: linear-gradient(
-    140deg,
-    color-mix(in oklab, var(--rose-pink) 85%, white),
-    color-mix(in oklab, var(--deep-crimson) 45%, transparent)
+    135deg,
+    color-mix(in oklab, var(--blush) 90%, white),
+    color-mix(in oklab, var(--rose) 40%, transparent)
   );
+  filter: drop-shadow(0 2px 4px color-mix(in oklab, var(--wine) 15%, transparent));
   animation: petal-fall linear infinite;
 }
 
@@ -199,9 +289,79 @@
   animation: soft-float 7s ease-in-out infinite;
 }
 
+@utility shimmer-gold {
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Section Styling */
+@layer components {
+  .stationery-section {
+    @apply relative py-24 sm:py-32;
+    border-top: 1px solid var(--border);
+  }
+
+  .stationery-section:first-of-type {
+    border-top: none;
+  }
+
+  .stationery-divider {
+    @apply my-12 sm:my-16;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      color-mix(in oklab, var(--antique-gold) 50%, transparent) 25%,
+      color-mix(in oklab, var(--antique-gold) 70%, transparent) 50%,
+      color-mix(in oklab, var(--antique-gold) 50%, transparent) 75%,
+      transparent 100%
+    );
+    position: relative;
+  }
+
+  .invitation-header {
+    @apply text-center space-y-4;
+  }
+
+  .event-card {
+    @apply paper rounded-sm;
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow:
+        0 4px 0 color-mix(in oklab, var(--antique-gold) 35%, transparent),
+        0 16px 32px -8px color-mix(in oklab, var(--wine) 25%, transparent);
+    }
+  }
+}
+
+/* Print-Friendly Styles */
+@media print {
+  body {
+    background-color: white;
+    background-image: none;
+  }
+
+  body::before {
+    display: none;
+  }
+
+  .no-print {
+    display: none;
+  }
+
+  .paper {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+}
+
+/* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
 }
+
