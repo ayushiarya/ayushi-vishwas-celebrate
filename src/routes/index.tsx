@@ -11,7 +11,6 @@ import {
   EVENTS,
   GOOD_TO_KNOW,
   HOTELS,
-  STORY,
   calendarLink,
   mapsDirections,
   mapsEmbed,
@@ -27,13 +26,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Ayushi & Vishwas invite you to their wedding on the 24th & 25th at Hill View Resort, Jamshedpur — haldi, sangeet, engagement and the wedding ceremony.",
+          "Ayushi & Vishwas invite you to their wedding on the 24th & 25th November at Hill View Resort, Jamshedpur — haldi, sangeet, engagement and the wedding ceremony.",
       },
       { property: "og:title", content: "Ayushi & Vishwas · Wedding Invitation, Jamshedpur" },
       {
         property: "og:description",
         content:
-          "Ayushi & Vishwas invite you to their wedding on the 24th & 25th at Hill View Resort, Jamshedpur — haldi, sangeet, engagement and the wedding ceremony.",
+          "Ayushi & Vishwas invite you to their wedding on the 24th & 25th November at Hill View Resort, Jamshedpur — haldi, sangeet, engagement and the wedding ceremony.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -101,7 +100,7 @@ function Invitation() {
             </Reveal>
             <Reveal delay={800} className="mt-12">
               <span className="rule-gold mx-auto block w-32" />
-              <p className="script mt-6 text-3xl text-primary">24th & 25th</p>
+              <p className="script mt-6 text-3xl text-primary">24th & 25th November</p>
               <p className="mt-3 text-[0.65rem] tracking-[0.34em] text-muted-foreground uppercase">
                 {COUPLE.city}, {COUPLE.state}
               </p>
@@ -112,7 +111,7 @@ function Invitation() {
         {/* SAVE THE DATE */}
         <section id="save-the-date" className="px-5 py-24 sm:py-32">
           <div className="mx-auto max-w-4xl">
-            <SectionHeading eyebrow="Save the date" title="24th & 25th" />
+            <SectionHeading eyebrow="Save the date" title="24th & 25th November" />
             <div className="mt-14 grid gap-6 sm:grid-cols-2 sm:gap-10">
               {[
                 {
@@ -158,27 +157,9 @@ function Invitation() {
             </div>
             <Reveal delay={200}>
               <p className="mt-10 text-center text-[0.65rem] tracking-[0.3em] text-muted-foreground uppercase">
-                25th Evening · Wedding Ceremony · {COUPLE.venue}, {COUPLE.city}
+                25th November Evening · Wedding Ceremony · {COUPLE.venue}, {COUPLE.city}
               </p>
             </Reveal>
-          </div>
-        </section>
-
-        {/* OUR STORY */}
-        <section id="story" className="px-5 py-24 sm:py-32">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading eyebrow="Our story" />
-            <ol className="mt-14 space-y-10 border-l border-border pl-8 sm:pl-12">
-              {STORY.map((s, i) => (
-                <Reveal as="li" key={s.label} delay={i * 100} className="relative">
-                  <span className="absolute -left-[38px] top-2 h-2 w-2 rotate-45 bg-gold sm:-left-[54px]" />
-                  <h3 className="font-display text-2xl text-primary">{s.label}</h3>
-                  <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted-foreground">
-                    {s.text}
-                  </p>
-                </Reveal>
-              ))}
-            </ol>
           </div>
         </section>
 
@@ -470,7 +451,7 @@ function Invitation() {
                 </h2>
                 <span className="rule-gold mx-auto my-7 block w-24" />
                 <p className="text-[0.65rem] tracking-[0.32em] text-muted-foreground uppercase">
-                  24th & 25th · {COUPLE.city}
+                  24th & 25th November · {COUPLE.city}
                 </p>
                 <p className="mt-8 font-display text-xl italic text-primary/80">
                   We can&apos;t wait to celebrate with you.
