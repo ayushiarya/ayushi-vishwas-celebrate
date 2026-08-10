@@ -55,7 +55,7 @@ export function Envelope({ onOpen }: { onOpen: () => void }) {
             {/* letter sliding out */}
             <div
               className={`absolute inset-x-6 bottom-6 top-8 paper flex flex-col items-center justify-center gap-3 transition-transform duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
-                opening ? "-translate-y-24 delay-500" : "translate-y-6"
+                opening ? "-translate-y-24 opacity-100 delay-500" : "translate-y-6 opacity-0"
               }`}
             >
               <span className="eyebrow">Together with their families</span>

@@ -33,10 +33,10 @@ function Sun() {
         return (
           <line
             key={i}
-            x1={32 + Math.cos(a) * 18}
-            y1={32 + Math.sin(a) * 18}
-            x2={32 + Math.cos(a) * 24}
-            y2={32 + Math.sin(a) * 24}
+            x1={+(32 + Math.cos(a) * 18).toFixed(2)}
+            y1={+(32 + Math.sin(a) * 18).toFixed(2)}
+            x2={+(32 + Math.cos(a) * 24).toFixed(2)}
+            y2={+(32 + Math.sin(a) * 24).toFixed(2)}
             stroke="currentColor"
             strokeWidth="1"
           />
