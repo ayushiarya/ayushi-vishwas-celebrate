@@ -28,11 +28,11 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-wine: var(--wine);
-  --color-blush: var(--blush);
-  --color-gold: var(--gold);
-  --color-ivory: var(--ivory);
-  --color-ink: var(--ink);
+  --color-sage: var(--sage);
+  --color-emerald: var(--emerald);
+  --color-champagne: var(--champagne);
+  --color-cream: var(--cream);
+  --color-charcoal: var(--charcoal);
   --font-display: "Cormorant Garamond", Georgia, serif;
   --font-script: "Italiana", "Cormorant Garamond", serif;
   --font-body: "Jost", system-ui, sans-serif;
@@ -41,31 +41,31 @@
 :root {
   --radius: 0.25rem;
 
-  --ivory: oklch(0.975 0.011 85);
-  --wine: oklch(0.34 0.098 18);
-  --blush: oklch(0.86 0.038 20);
-  --gold: oklch(0.72 0.078 78);
-  --ink: oklch(0.28 0.02 40);
+  --cream: oklch(0.98 0.006 90);
+  --sage: oklch(0.48 0.062 142);
+  --emerald: oklch(0.52 0.088 155);
+  --champagne: oklch(0.75 0.048 82);
+  --charcoal: oklch(0.25 0.01 240);
 
-  --background: var(--ivory);
-  --foreground: var(--ink);
-  --card: oklch(0.99 0.008 85);
-  --card-foreground: var(--ink);
+  --background: var(--cream);
+  --foreground: var(--charcoal);
+  --card: oklch(0.995 0.004 90);
+  --card-foreground: var(--charcoal);
   --popover: var(--card);
-  --popover-foreground: var(--ink);
-  --primary: var(--wine);
-  --primary-foreground: oklch(0.98 0.01 85);
-  --secondary: oklch(0.93 0.022 45);
-  --secondary-foreground: var(--wine);
-  --muted: oklch(0.94 0.014 70);
-  --muted-foreground: oklch(0.5 0.028 45);
-  --accent: var(--blush);
-  --accent-foreground: var(--wine);
+  --popover-foreground: var(--charcoal);
+  --primary: var(--sage);
+  --primary-foreground: oklch(0.98 0.01 90);
+  --secondary: oklch(0.92 0.018 140);
+  --secondary-foreground: var(--sage);
+  --muted: oklch(0.94 0.01 80);
+  --muted-foreground: oklch(0.52 0.028 150);
+  --accent: var(--emerald);
+  --accent-foreground: oklch(0.98 0.01 90);
   --destructive: oklch(0.55 0.2 25);
-  --destructive-foreground: oklch(0.98 0.01 85);
-  --border: oklch(0.88 0.024 60);
-  --input: oklch(0.88 0.024 60);
-  --ring: var(--gold);
+  --destructive-foreground: oklch(0.98 0.01 90);
+  --border: oklch(0.88 0.02 120);
+  --input: oklch(0.88 0.02 120);
+  --ring: var(--champagne);
 }
 
 @layer base {
@@ -84,8 +84,8 @@
     font-weight: 300;
     letter-spacing: 0.01em;
     background-image:
-      radial-gradient(circle at 15% 10%, color-mix(in oklab, var(--blush) 26%, transparent), transparent 45%),
-      radial-gradient(circle at 85% 80%, color-mix(in oklab, var(--gold) 16%, transparent), transparent 48%);
+      radial-gradient(circle at 15% 10%, color-mix(in oklab, var(--emerald) 18%, transparent), transparent 45%),
+      radial-gradient(circle at 85% 80%, color-mix(in oklab, var(--champagne) 14%, transparent), transparent 48%);
     background-attachment: fixed;
   }
 
@@ -103,7 +103,7 @@
   font-weight: 400;
   letter-spacing: 0.42em;
   text-transform: uppercase;
-  color: color-mix(in oklab, var(--wine) 70%, transparent);
+  color: color-mix(in oklab, var(--sage) 65%, transparent);
 }
 
 @utility script {
@@ -115,8 +115,8 @@
 @utility paper {
   background-color: var(--card);
   box-shadow:
-    0 1px 0 color-mix(in oklab, var(--gold) 30%, transparent),
-    0 30px 60px -40px color-mix(in oklab, var(--wine) 45%, transparent);
+    0 1px 0 color-mix(in oklab, var(--champagne) 35%, transparent),
+    0 30px 60px -40px color-mix(in oklab, var(--sage) 35%, transparent);
 }
 
 @utility rule-gold {
@@ -124,19 +124,19 @@
   background: linear-gradient(
     to right,
     transparent,
-    color-mix(in oklab, var(--gold) 85%, transparent),
+    color-mix(in oklab, var(--champagne) 80%, transparent),
     transparent
   );
 }
 
 @utility ornament-frame {
   position: relative;
-  border: 1px solid color-mix(in oklab, var(--gold) 55%, transparent);
+  border: 1px solid color-mix(in oklab, var(--champagne) 55%, transparent);
   &::after {
     content: "";
     position: absolute;
     inset: 6px;
-    border: 1px solid color-mix(in oklab, var(--wine) 16%, transparent);
+    border: 1px solid color-mix(in oklab, var(--sage) 14%, transparent);
     pointer-events: none;
   }
 }
@@ -183,8 +183,8 @@
   border-radius: 60% 10% 60% 10%;
   background: linear-gradient(
     140deg,
-    color-mix(in oklab, var(--blush) 90%, white),
-    color-mix(in oklab, var(--wine) 35%, transparent)
+    color-mix(in oklab, var(--emerald) 80%, white),
+    color-mix(in oklab, var(--sage) 40%, transparent)
   );
   animation: petal-fall linear infinite;
 }
