@@ -470,7 +470,7 @@ function Invitation() {
                 <Reveal key={h.name} delay={i * 90}>
                   <div className="card-organic card-organic-alt relative flex h-full flex-col px-6 py-8 text-center">
                     <h4 className="font-display text-2xl text-primary">{h.name}</h4>
-                    <span className="rule-gold my-4 w-full" />
+                    <SquiggleDoodle className="my-4 w-full text-antique-gold/70" />
                     <p className="text-[0.58rem] tracking-[0.26em] text-muted-foreground uppercase">
                       {h.category}
                     </p>
@@ -528,7 +528,7 @@ function Invitation() {
                 <Reveal key={c.title} delay={i * 90}>
                   <div className="card-organic h-full px-6 py-8">
                     <h3 className="font-display text-2xl text-primary">{c.title}</h3>
-                    <span className="rule-gold my-4 block w-12" />
+                    <SquiggleDoodle className="my-4 w-16 text-rose/70" />
                     <p className="text-sm leading-relaxed text-muted-foreground">{c.text}</p>
                   </div>
                 </Reveal>
@@ -549,7 +549,7 @@ function Invitation() {
                 <h2 className="script text-5xl text-primary sm:text-6xl">
                   {COUPLE.bride} & {COUPLE.groom}
                 </h2>
-                <span className="rule-gold mx-auto my-7 block w-24" />
+                <DoodleDivider className="my-7" />
                 <p className="text-[0.65rem] tracking-[0.32em] text-muted-foreground uppercase">
                   24th & 25th November · {COUPLE.city}
                 </p>
