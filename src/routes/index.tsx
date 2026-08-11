@@ -35,7 +35,6 @@ import {
 } from "@/lib/wedding";
 
 import venueImg from "@/assets/venue.jpg";
-import sprig from "@/assets/sprig.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -364,7 +363,7 @@ function Invitation() {
                     href={mapsView}
                     target="_blank"
                     rel="noreferrer"
-                    className="border border-primary/40 px-6 py-3 text-[0.6rem] tracking-[0.28em] text-primary uppercase transition-colors hover:bg-primary hover:text-primary-foreground"
+                    className="btn-ink"
                   >
                     View on map
                   </a>
@@ -372,7 +371,7 @@ function Invitation() {
                     href={mapsDirections}
                     target="_blank"
                     rel="noreferrer"
-                    className="border border-border px-6 py-3 text-[0.6rem] tracking-[0.28em] text-muted-foreground uppercase transition-colors hover:border-primary/40 hover:text-primary"
+                    className="btn-quiet"
                   >
                     Get directions
                   </a>
@@ -380,7 +379,7 @@ function Invitation() {
               </Reveal>
 
               <Reveal delay={150}>
-                <div className="ornament-frame overflow-hidden p-1.5">
+                <div className="card-organic overflow-hidden p-1.5">
                   <iframe
                     title="Map of Hill View Resort, Jamshedpur"
                     src={mapsEmbed}
@@ -443,7 +442,7 @@ function Invitation() {
                 },
               ].map((c, i) => (
                 <Reveal key={c.t} delay={i * 80}>
-                  <div className="paper h-full border-t border-gold/50 px-6 py-8">
+                  <div className="card-organic h-full px-6 py-8">
                     <h4 className="text-[0.6rem] tracking-[0.3em] text-muted-foreground uppercase">
                       {c.t}
                     </h4>
@@ -469,7 +468,7 @@ function Invitation() {
             <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {HOTELS.map((h, i) => (
                 <Reveal key={h.name} delay={i * 90}>
-                  <div className="ornament-frame paper flex h-full flex-col px-6 py-8 text-center">
+                  <div className="card-organic card-organic-alt relative flex h-full flex-col px-6 py-8 text-center">
                     <h4 className="font-display text-2xl text-primary">{h.name}</h4>
                     <span className="rule-gold my-4 w-full" />
                     <p className="text-[0.58rem] tracking-[0.26em] text-muted-foreground uppercase">
@@ -508,7 +507,7 @@ function Invitation() {
                 },
               ].map((c, i) => (
                 <Reveal key={c.t} delay={i * 90}>
-                  <div className="paper h-full border-t border-gold/50 px-6 py-8">
+                  <div className="card-organic h-full px-6 py-8">
                     <h4 className="text-[0.6rem] tracking-[0.3em] text-muted-foreground uppercase">
                       {c.t}
                     </h4>
@@ -527,7 +526,7 @@ function Invitation() {
             <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {GOOD_TO_KNOW.map((c, i) => (
                 <Reveal key={c.title} delay={i * 90}>
-                  <div className="paper h-full px-6 py-8">
+                  <div className="card-organic h-full px-6 py-8">
                     <h3 className="font-display text-2xl text-primary">{c.title}</h3>
                     <span className="rule-gold my-4 block w-12" />
                     <p className="text-sm leading-relaxed text-muted-foreground">{c.text}</p>
@@ -546,7 +545,7 @@ function Invitation() {
               <p className="eyebrow">And so, our next chapter begins…</p>
             </Reveal>
             <Reveal delay={200}>
-              <div className="ornament-frame paper mt-10 px-6 py-14">
+              <div className="card-organic relative mt-10 px-6 py-14">
                 <h2 className="script text-5xl text-primary sm:text-6xl">
                   {COUPLE.bride} & {COUPLE.groom}
                 </h2>
