@@ -31,7 +31,20 @@
   --font-display: "Cormorant Garamond", Georgia, serif;
   --font-script: "Italiana", "Cormorant Garamond", serif;
   --font-body: "Jost", system-ui, sans-serif;
+  --color-ivory: var(--ivory);
+  --color-champagne: var(--champagne);
+  --color-wine: var(--wine);
+  --color-blush: var(--blush);
+  --color-gold: var(--gold);
+  --color-antique-gold: var(--antique-gold);
+  --color-sage: var(--sage);
+  --color-rose: var(--rose);
+  --color-peach: var(--peach);
+  --color-mustard: var(--mustard);
+  --color-lavender: var(--lavender);
+  --color-olive: var(--olive);
 }
+
 
 :root {
   --radius: 0.25rem;
