@@ -6,18 +6,35 @@ import { Petals } from "@/components/Petals";
 import { Reveal } from "@/components/Reveal";
 import { Countdown } from "@/components/Countdown";
 import { Weather } from "@/components/Weather";
+import { ScratchCard } from "@/components/ScratchCard";
+import {
+  BowDoodle,
+  DoodleDivider,
+  HeartDoodle,
+  LeafSprigDoodle,
+  MarigoldDoodle,
+  SparkleDoodle,
+  SquiggleDoodle,
+  StarDoodle,
+} from "@/components/Doodles";
+import {
+  HaldiCaricature,
+  SangeetCaricature,
+  WeddingCaricature,
+} from "@/components/EventCaricatures";
 import {
   COUPLE,
   EVENTS,
   GOOD_TO_KNOW,
   HOTELS,
+  STORY,
   calendarLink,
   mapsDirections,
   mapsEmbed,
   mapsView,
 } from "@/lib/wedding";
+
 import venueImg from "@/assets/venue.jpg";
-import sprig from "@/assets/sprig.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -48,27 +65,16 @@ function SectionHeading({ eyebrow, title }: { eyebrow: string; title?: string })
       {title ? (
         <h2 className="script mt-4 text-4xl text-primary sm:text-5xl">{title}</h2>
       ) : null}
-      <span className="rule-gold mx-auto mt-6 block w-24" />
+      <DoodleDivider className="mt-5" />
     </Reveal>
-  );
-}
-
-function Ornament() {
-  return (
-    <img
-      src={sprig}
-      alt=""
-      aria-hidden
-      width={900}
-      height={900}
-      loading="lazy"
-      className="mx-auto w-24 opacity-70"
-    />
   );
 }
 
 function Invitation() {
   const [opened, setOpened] = useState(false);
+
+  const caricatures = [HaldiCaricature, SangeetCaricature, WeddingCaricature];
+  const eventTints = ["wash-sage", "wash-blush", "wash-lavender"];
 
   return (
     <div className={opened ? "" : "max-h-screen overflow-hidden"}>
@@ -82,52 +88,99 @@ function Invitation() {
           className="relative flex min-h-[100svh] items-center justify-center overflow-hidden px-5 pt-24"
         >
           <Petals count={16} opacity={0.45} />
+          <div className="wash-blush pointer-events-none absolute inset-0 opacity-70" />
+
+          {/* floating doodles */}
+          <MarigoldDoodle className="absolute left-[6%] top-[18%] w-12 text-mustard/70 float-slow sm:w-16" />
+          <LeafSprigDoodle className="absolute right-[5%] top-[24%] w-24 text-sage/70 wiggle-slow sm:w-32" />
+          <HeartDoodle className="absolute bottom-[18%] left-[12%] w-7 text-rose/70 twinkle" />
+          <SparkleDoodle className="absolute right-[14%] bottom-[22%] w-8 text-gold/80 twinkle" />
+          <StarDoodle className="absolute left-[42%] top-[12%] w-5 text-lavender twinkle" />
+
           <div className="relative w-full max-w-2xl text-center">
             <Reveal delay={200}>
               <p className="eyebrow">Together with their families</p>
             </Reveal>
+
             <Reveal delay={400}>
-              <h1 className="script mt-8 text-6xl leading-[0.95] text-primary sm:text-8xl">
-                {COUPLE.bride}
-                <span className="my-3 block font-display text-3xl text-gold sm:text-4xl">&</span>
-                {COUPLE.groom}
-              </h1>
+              <div className="relative mt-8">
+                <BowDoodle className="absolute -top-8 left-1/2 w-12 -translate-x-1/2 text-rose/70 wiggle-slow" />
+                <h1 className="script text-6xl leading-[0.95] text-primary sm:text-8xl">
+                  <span className="relative inline-block">
+                    {COUPLE.bride}
+                    <SparkleDoodle className="absolute -right-7 -top-3 w-6 text-gold twinkle" />
+                  </span>
+                  <span className="my-4 flex items-center justify-center gap-3">
+                    <SquiggleDoodle className="w-14 text-antique-gold/60" />
+                    <span className="font-display text-3xl text-gold sm:text-4xl">&</span>
+                    <SquiggleDoodle className="w-14 -scale-x-100 text-antique-gold/60" />
+                  </span>
+                  <span className="relative inline-block">
+                    {COUPLE.groom}
+                    <HeartDoodle className="absolute -left-8 -bottom-1 w-6 text-rose twinkle" />
+                  </span>
+                </h1>
+              </div>
             </Reveal>
+
             <Reveal delay={600}>
               <p className="mt-8 font-display text-xl italic text-muted-foreground">
                 Two hearts. One beautiful beginning.
               </p>
             </Reveal>
-            <Reveal delay={800} className="mt-12">
-              <span className="rule-gold mx-auto block w-32" />
-              <p className="script mt-6 text-3xl text-primary">24th & 25th November</p>
-              <p className="mt-3 text-[0.65rem] tracking-[0.34em] text-muted-foreground uppercase">
+
+            <Reveal delay={800} className="mt-10">
+              <DoodleDivider />
+              <p className="mt-5 text-[0.65rem] tracking-[0.34em] text-muted-foreground uppercase">
                 {COUPLE.city}, {COUPLE.state}
               </p>
             </Reveal>
           </div>
         </section>
 
-        {/* SAVE THE DATE */}
-        <section id="save-the-date" className="px-5 py-24 sm:py-32">
-          <div className="mx-auto max-w-4xl">
-            <SectionHeading eyebrow="Save the date" title="24th & 25th November" />
+        {/* SAVE THE DATE — scratch card */}
+        <section id="save-the-date" className="relative overflow-hidden px-5 py-24 sm:py-32">
+          <div className="wash-sage pointer-events-none absolute inset-0 opacity-60" />
+          <div className="relative mx-auto max-w-4xl">
+            <SectionHeading eyebrow="Save the date" />
+            <Reveal delay={120} className="mt-12">
+              <ScratchCard>
+                <p className="eyebrow">Mark your calendars</p>
+                <p className="script mt-3 text-5xl leading-[1.05] text-primary sm:text-7xl">
+                  24<sup className="font-display text-2xl text-gold">th</sup> &amp; 25
+                  <sup className="font-display text-2xl text-gold">th</sup>
+                  <span className="mt-1 block">November</span>
+                </p>
+                <div className="mt-4 flex items-center justify-center gap-3 text-rose">
+                  <HeartDoodle className="w-4" />
+                  <span className="text-[0.6rem] tracking-[0.32em] text-muted-foreground uppercase">
+                    {COUPLE.venue}, {COUPLE.city}
+                  </span>
+                  <HeartDoodle className="w-4" />
+                </div>
+              </ScratchCard>
+            </Reveal>
+
             <div className="mt-14 grid gap-6 sm:grid-cols-2 sm:gap-10">
               {[
                 {
                   day: "24",
                   suffix: "th",
                   items: ["Haldi — Morning", "Sangeet & Engagement — Evening"],
+                  tilt: "-rotate-1",
                 },
-                { day: "25", suffix: "th", items: ["Wedding — Evening"] },
+                { day: "25", suffix: "th", items: ["Wedding — Evening"], tilt: "rotate-1" },
               ].map((d, i) => (
                 <Reveal key={d.day} delay={i * 150}>
-                  <div className="ornament-frame paper flex h-full flex-col items-center px-6 py-12 text-center">
+                  <div
+                    className={`card-organic ${i === 1 ? "card-organic-alt" : ""} ${d.tilt} relative flex h-full flex-col items-center px-6 py-12 text-center`}
+                  >
+                    <MarigoldDoodle className="absolute -left-3 -top-4 w-10 text-mustard/80 doodle-hover" />
                     <span className="script text-7xl text-primary">
                       {d.day}
                       <sup className="font-display text-2xl text-gold">{d.suffix}</sup>
                     </span>
-                    <span className="rule-gold my-7 w-16" />
+                    <SquiggleDoodle className="my-6 w-20 text-antique-gold/70" />
                     <ul className="space-y-3">
                       {d.items.map((it) => (
                         <li
@@ -156,79 +209,126 @@ function Invitation() {
               </Reveal>
             </div>
             <Reveal delay={200}>
-              <p className="mt-10 text-center text-[0.65rem] tracking-[0.3em] text-muted-foreground uppercase">
-                25th November Evening · Wedding Ceremony · {COUPLE.venue}, {COUPLE.city}
+              <p className="mt-10 text-center font-display text-xl italic text-primary/80">
+                25th November · Evening · Wedding Ceremony
+              </p>
+              <p className="mt-2 text-center text-[0.62rem] tracking-[0.3em] text-muted-foreground uppercase">
+                {COUPLE.venue}, {COUPLE.city}
               </p>
             </Reveal>
           </div>
         </section>
 
-        {/* EVENTS */}
-        <section id="events" className="px-5 py-24 sm:py-32">
-          <div className="mx-auto max-w-6xl">
-            <SectionHeading eyebrow="The wedding celebrations" />
-            <div className="mt-14 grid gap-8 lg:grid-cols-3">
-              {EVENTS.map((e, i) => (
-                <Reveal as="article" key={e.id} delay={i * 140}>
-                  <div className="ornament-frame paper group flex h-full flex-col px-7 py-10 transition-transform duration-700 hover:-translate-y-1.5">
-                    <Ornament />
-                    <h3 className="script mt-6 text-center text-3xl text-primary">{e.name}</h3>
-                    <p className="mt-3 text-center text-[0.62rem] tracking-[0.3em] text-muted-foreground uppercase">
-                      {e.day}
-                      {e.daySuffix} · {e.partOfDay}
-                    </p>
-                    <span className="rule-gold my-6 w-full" />
-                    <p className="text-center text-sm leading-relaxed text-muted-foreground">
-                      {e.description}
-                    </p>
-
-                    <dl className="mt-7 space-y-3 text-center">
-                      <div>
-                        <dt className="text-[0.55rem] tracking-[0.3em] text-muted-foreground uppercase">
-                          Time
-                        </dt>
-                        <dd className="font-display text-lg text-primary">{e.time}</dd>
-                      </div>
-                      <div>
-                        <dt className="text-[0.55rem] tracking-[0.3em] text-muted-foreground uppercase">
-                          Venue
-                        </dt>
-                        <dd className="font-display text-lg text-primary">
-                          {COUPLE.venue}, {COUPLE.city}
-                        </dd>
-                      </div>
-                      <div>
-                        <dt className="text-[0.55rem] tracking-[0.3em] text-muted-foreground uppercase">
-                          Dress code
-                        </dt>
-                        <dd className="font-display text-lg text-primary">{e.dressCode}</dd>
-                      </div>
-                    </dl>
-
-                    <div className="mt-auto flex flex-wrap justify-center gap-3 pt-8">
-                      <a
-                        href={calendarLink(e)}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="border border-primary/40 px-4 py-2 text-[0.58rem] tracking-[0.24em] text-primary uppercase transition-colors hover:bg-primary hover:text-primary-foreground"
-                      >
-                        Add to calendar
-                      </a>
-                      <a
-                        href={mapsDirections}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="border border-border px-4 py-2 text-[0.58rem] tracking-[0.24em] text-muted-foreground uppercase transition-colors hover:border-primary/40 hover:text-primary"
-                      >
-                        Directions
-                      </a>
+        {/* OUR STORY */}
+        <section id="story" className="relative overflow-hidden px-5 py-24 sm:py-32">
+          <div className="wash-lavender pointer-events-none absolute inset-0 opacity-50" />
+          <div className="relative mx-auto max-w-3xl">
+            <SectionHeading eyebrow="Our story" />
+            <ol className="mt-14 space-y-10">
+              {STORY.map((s, i) => (
+                <Reveal as="li" key={s.label} delay={i * 90}>
+                  <div
+                    className={`flex items-start gap-5 ${i % 2 ? "sm:ml-16" : "sm:mr-16"}`}
+                  >
+                    <span className="mt-1 shrink-0 text-gold">
+                      {i % 2 ? (
+                        <HeartDoodle className="w-6 text-rose float-slow" />
+                      ) : (
+                        <MarigoldDoodle className="w-7 text-mustard float-slow" />
+                      )}
+                    </span>
+                    <div>
+                      <p className="text-[0.6rem] tracking-[0.32em] text-muted-foreground uppercase">
+                        {s.label}
+                      </p>
+                      <p className="mt-2 font-display text-xl leading-relaxed text-foreground/85">
+                        {s.text}
+                      </p>
                     </div>
                   </div>
                 </Reveal>
               ))}
+            </ol>
+          </div>
+        </section>
+
+        {/* EVENTS */}
+        <section id="events" className="relative overflow-hidden px-5 py-24 sm:py-32">
+          <div className="relative mx-auto max-w-6xl">
+            <SectionHeading eyebrow="The wedding celebrations" />
+            <div className="mt-24 grid gap-16 lg:grid-cols-3 lg:gap-8">
+              {EVENTS.map((e, i) => {
+                const Caricature = caricatures[i]!;
+                return (
+                  <Reveal as="article" key={e.id} delay={i * 140}>
+                    <div
+                      className={`card-organic ${i % 2 ? "card-organic-alt rotate-[0.7deg]" : "-rotate-[0.7deg]"} relative flex h-full flex-col px-7 pb-10 pt-20`}
+                    >
+                      <div className={`${eventTints[i]} pointer-events-none absolute inset-0 rounded-[inherit] opacity-60`} />
+
+                      {/* caricature spilling over the card edge */}
+                      <div className="absolute -top-28 left-1/2 -translate-x-1/2">
+                        <div className="float-slow">
+                          <Caricature />
+                        </div>
+                      </div>
+
+                      <SparkleDoodle className="absolute right-4 top-6 w-5 text-gold twinkle" />
+                      <StarDoodle className="absolute left-5 top-10 w-4 text-sage twinkle" />
+
+                      <div className="relative">
+                        <p className="text-center text-[0.6rem] tracking-[0.34em] text-muted-foreground uppercase">
+                          {e.day}
+                          {e.daySuffix} · {e.partOfDay}
+                        </p>
+                        <h3 className="script mt-2 text-center text-3xl text-primary">{e.name}</h3>
+                        <DoodleDivider className="mt-4" />
+                        <p className="mt-5 text-center text-sm leading-relaxed text-muted-foreground">
+                          {e.description}
+                        </p>
+
+                        <dl className="mt-7 space-y-3 text-center">
+                          <div>
+                            <dt className="text-[0.55rem] tracking-[0.3em] text-muted-foreground uppercase">
+                              Time
+                            </dt>
+                            <dd className="font-display text-lg text-primary">{e.time}</dd>
+                          </div>
+                          <div>
+                            <dt className="text-[0.55rem] tracking-[0.3em] text-muted-foreground uppercase">
+                              Venue
+                            </dt>
+                            <dd className="font-display text-lg text-primary">
+                              {COUPLE.venue}, {COUPLE.city}
+                            </dd>
+                          </div>
+                          <div>
+                            <dt className="text-[0.55rem] tracking-[0.3em] text-muted-foreground uppercase">
+                              Dress code
+                            </dt>
+                            <dd className="font-display text-lg text-primary">{e.dressCode}</dd>
+                          </div>
+                        </dl>
+
+                        <div className="mt-auto flex flex-wrap justify-center gap-3 pt-8">
+                          <a href={calendarLink(e)} target="_blank" rel="noreferrer" className="btn-ink">
+                            Add to calendar
+                          </a>
+                          <a href={mapsDirections} target="_blank" rel="noreferrer" className="btn-quiet">
+                            Directions
+                          </a>
+                        </div>
+                      </div>
+
+                      <LeafSprigDoodle className="absolute -bottom-4 -right-3 w-20 text-sage/70 doodle-hover" />
+                    </div>
+                  </Reveal>
+                );
+              })}
             </div>
           </div>
         </section>
+
 
         {/* VENUE */}
         <section id="venue" className="px-5 py-24 sm:py-32">
@@ -263,7 +363,7 @@ function Invitation() {
                     href={mapsView}
                     target="_blank"
                     rel="noreferrer"
-                    className="border border-primary/40 px-6 py-3 text-[0.6rem] tracking-[0.28em] text-primary uppercase transition-colors hover:bg-primary hover:text-primary-foreground"
+                    className="btn-ink"
                   >
                     View on map
                   </a>
@@ -271,7 +371,7 @@ function Invitation() {
                     href={mapsDirections}
                     target="_blank"
                     rel="noreferrer"
-                    className="border border-border px-6 py-3 text-[0.6rem] tracking-[0.28em] text-muted-foreground uppercase transition-colors hover:border-primary/40 hover:text-primary"
+                    className="btn-quiet"
                   >
                     Get directions
                   </a>
@@ -279,7 +379,7 @@ function Invitation() {
               </Reveal>
 
               <Reveal delay={150}>
-                <div className="ornament-frame overflow-hidden p-1.5">
+                <div className="card-organic overflow-hidden p-1.5">
                   <iframe
                     title="Map of Hill View Resort, Jamshedpur"
                     src={mapsEmbed}
@@ -342,7 +442,7 @@ function Invitation() {
                 },
               ].map((c, i) => (
                 <Reveal key={c.t} delay={i * 80}>
-                  <div className="paper h-full border-t border-gold/50 px-6 py-8">
+                  <div className="card-organic h-full px-6 py-8">
                     <h4 className="text-[0.6rem] tracking-[0.3em] text-muted-foreground uppercase">
                       {c.t}
                     </h4>
@@ -368,9 +468,9 @@ function Invitation() {
             <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {HOTELS.map((h, i) => (
                 <Reveal key={h.name} delay={i * 90}>
-                  <div className="ornament-frame paper flex h-full flex-col px-6 py-8 text-center">
+                  <div className="card-organic card-organic-alt relative flex h-full flex-col px-6 py-8 text-center">
                     <h4 className="font-display text-2xl text-primary">{h.name}</h4>
-                    <span className="rule-gold my-4 w-full" />
+                    <SquiggleDoodle className="my-4 w-full text-antique-gold/70" />
                     <p className="text-[0.58rem] tracking-[0.26em] text-muted-foreground uppercase">
                       {h.category}
                     </p>
@@ -407,7 +507,7 @@ function Invitation() {
                 },
               ].map((c, i) => (
                 <Reveal key={c.t} delay={i * 90}>
-                  <div className="paper h-full border-t border-gold/50 px-6 py-8">
+                  <div className="card-organic h-full px-6 py-8">
                     <h4 className="text-[0.6rem] tracking-[0.3em] text-muted-foreground uppercase">
                       {c.t}
                     </h4>
@@ -426,9 +526,9 @@ function Invitation() {
             <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {GOOD_TO_KNOW.map((c, i) => (
                 <Reveal key={c.title} delay={i * 90}>
-                  <div className="paper h-full px-6 py-8">
+                  <div className="card-organic h-full px-6 py-8">
                     <h3 className="font-display text-2xl text-primary">{c.title}</h3>
-                    <span className="rule-gold my-4 block w-12" />
+                    <SquiggleDoodle className="my-4 w-16 text-rose/70" />
                     <p className="text-sm leading-relaxed text-muted-foreground">{c.text}</p>
                   </div>
                 </Reveal>
@@ -445,11 +545,11 @@ function Invitation() {
               <p className="eyebrow">And so, our next chapter begins…</p>
             </Reveal>
             <Reveal delay={200}>
-              <div className="ornament-frame paper mt-10 px-6 py-14">
+              <div className="card-organic relative mt-10 px-6 py-14">
                 <h2 className="script text-5xl text-primary sm:text-6xl">
                   {COUPLE.bride} & {COUPLE.groom}
                 </h2>
-                <span className="rule-gold mx-auto my-7 block w-24" />
+                <DoodleDivider className="my-7" />
                 <p className="text-[0.65rem] tracking-[0.32em] text-muted-foreground uppercase">
                   24th & 25th November · {COUPLE.city}
                 </p>
