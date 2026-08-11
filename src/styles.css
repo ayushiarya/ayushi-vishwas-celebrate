@@ -383,3 +383,133 @@
   }
 }
 
+
+/* ── Playful stationery layer ────────────────────────────────────────────── */
+
+@utility card-organic {
+  background-color: var(--card);
+  border: 1.5px solid color-mix(in oklab, var(--antique-gold) 45%, transparent);
+  border-radius: 22px 6px 22px 6px;
+  box-shadow:
+    0 1px 0 color-mix(in oklab, var(--antique-gold) 30%, transparent),
+    0 14px 28px -18px color-mix(in oklab, var(--wine) 45%, transparent);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s ease;
+
+  &:hover {
+    transform: translateY(-5px) rotate(-0.5deg);
+    box-shadow:
+      0 2px 0 color-mix(in oklab, var(--antique-gold) 40%, transparent),
+      0 24px 40px -20px color-mix(in oklab, var(--wine) 40%, transparent);
+  }
+}
+
+@utility card-organic-alt {
+  border-radius: 6px 22px 6px 22px;
+}
+
+/* soft washed panels so sections stop looking sterile */
+@utility wash-blush {
+  background:
+    radial-gradient(circle at 15% 20%, color-mix(in oklab, var(--blush) 40%, transparent), transparent 55%),
+    radial-gradient(circle at 85% 80%, color-mix(in oklab, var(--peach) 34%, transparent), transparent 55%);
+}
+
+@utility wash-sage {
+  background:
+    radial-gradient(circle at 80% 15%, color-mix(in oklab, var(--sage) 20%, transparent), transparent 55%),
+    radial-gradient(circle at 10% 85%, color-mix(in oklab, var(--mustard) 22%, transparent), transparent 55%);
+}
+
+@utility wash-lavender {
+  background:
+    radial-gradient(circle at 20% 80%, color-mix(in oklab, var(--lavender) 26%, transparent), transparent 55%),
+    radial-gradient(circle at 90% 10%, color-mix(in oklab, var(--blush) 30%, transparent), transparent 55%);
+}
+
+/* torn/stamped ticket look for the countdown tiles */
+@utility stationery-tile {
+  position: relative;
+  background-color: var(--card);
+  border: 1px dashed color-mix(in oklab, var(--wine) 32%, transparent);
+  border-radius: 14px;
+  box-shadow: 0 10px 24px -20px color-mix(in oklab, var(--wine) 60%, transparent);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+
+  &:hover {
+    transform: translateY(-3px) rotate(0.6deg);
+  }
+}
+
+/* the scratch card body */
+@utility scratch-card {
+  border-radius: 18px;
+  border: 1.5px solid color-mix(in oklab, var(--antique-gold) 55%, transparent);
+  background:
+    radial-gradient(circle at 25% 25%, color-mix(in oklab, var(--peach) 45%, transparent), transparent 60%),
+    radial-gradient(circle at 80% 75%, color-mix(in oklab, var(--blush) 55%, transparent), transparent 60%),
+    var(--champagne);
+  box-shadow:
+    0 2px 0 color-mix(in oklab, var(--antique-gold) 40%, transparent),
+    0 26px 48px -28px color-mix(in oklab, var(--wine) 60%, transparent);
+}
+
+@utility doodle-hover {
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  &:hover {
+    transform: rotate(-6deg) scale(1.08);
+  }
+}
+
+@utility btn-ink {
+  display: inline-block;
+  border: 1.5px solid color-mix(in oklab, var(--wine) 55%, transparent);
+  border-radius: 999px;
+  padding: 0.6rem 1.25rem;
+  font-size: 0.58rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--wine);
+  background-color: color-mix(in oklab, var(--champagne) 60%, transparent);
+  transition: transform 0.35s ease, background-color 0.35s ease, color 0.35s ease;
+
+  &:hover {
+    background-color: var(--wine);
+    color: var(--ivory);
+    transform: translateY(-2px) rotate(-1deg);
+  }
+}
+
+@utility btn-quiet {
+  display: inline-block;
+  border: 1.5px dashed color-mix(in oklab, var(--antique-gold) 70%, transparent);
+  border-radius: 999px;
+  padding: 0.6rem 1.25rem;
+  font-size: 0.58rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--wine) 75%, transparent);
+  transition: transform 0.35s ease, border-color 0.35s ease;
+
+  &:hover {
+    border-color: color-mix(in oklab, var(--wine) 55%, transparent);
+    transform: translateY(-2px) rotate(1deg);
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+@utility wiggle-slow {
+  animation: wiggle 5s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.35; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+@utility twinkle {
+  animation: twinkle 4s ease-in-out infinite;
+}
