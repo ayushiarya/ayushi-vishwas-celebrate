@@ -267,7 +267,7 @@ function Invitation() {
                       <div className={`${eventTints[i]} pointer-events-none absolute inset-0 rounded-[inherit] opacity-60`} />
 
                       {/* caricature spilling over the card edge */}
-                      <div className="absolute -top-16 left-1/2 -translate-x-1/2">
+                      <div className="absolute -top-28 left-1/2 -translate-x-1/2">
                         <div className="float-slow">
                           <Caricature />
                         </div>
