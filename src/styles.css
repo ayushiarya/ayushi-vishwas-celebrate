@@ -49,20 +49,25 @@
 :root {
   --radius: 0.25rem;
 
-  /* Premium Wedding Stationery Palette */
-  --ivory: oklch(0.98 0.006 90);
-  --champagne: oklch(0.96 0.008 85);
-  --wine: oklch(0.34 0.105 15);
-  --blush: oklch(0.86 0.042 22);
-  --gold: oklch(0.72 0.085 75);
-  --antique-gold: oklch(0.65 0.075 65);
-  --ink: oklch(0.25 0.018 35);
-  --sage: oklch(0.52 0.045 145);
-  --rose: oklch(0.68 0.055 20);
+  /* Warm, handcrafted Indian wedding stationery palette */
+  --ivory: oklch(0.972 0.014 84);
+  --champagne: oklch(0.945 0.024 80);
+  --wine: oklch(0.38 0.098 18);
+  --blush: oklch(0.86 0.046 22);
+  --gold: oklch(0.74 0.09 78);
+  --antique-gold: oklch(0.66 0.082 68);
+  --ink: oklch(0.29 0.024 32);
+  --sage: oklch(0.6 0.05 148);
+  --olive: oklch(0.52 0.058 122);
+  --rose: oklch(0.7 0.068 18);
+  --peach: oklch(0.87 0.06 55);
+  --mustard: oklch(0.78 0.1 85);
+  --lavender: oklch(0.78 0.05 300);
 
   --background: var(--ivory);
   --foreground: var(--ink);
-  --card: oklch(0.995 0.003 90);
+  --card: oklch(0.985 0.011 86);
+
   --card-foreground: var(--ink);
   --popover: var(--card);
   --popover-foreground: var(--ink);
