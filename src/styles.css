@@ -172,19 +172,19 @@
     transparent 100%
   );
   position: relative;
-}
 
-@utility rule-gold::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  width: 4px;
-  height: 4px;
-  background-color: var(--antique-gold);
-  border-radius: 50%;
-  opacity: 0.6;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 4px;
+    height: 4px;
+    background-color: var(--antique-gold);
+    border-radius: 50%;
+    opacity: 0.6;
+  }
 }
 
 /* Decorative Border Frames */
