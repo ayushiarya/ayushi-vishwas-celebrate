@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { WEDDING_DATE } from "@/lib/wedding";
+import { HeartDoodle, MarigoldDoodle, SparkleDoodle, StarDoodle } from "@/components/Doodles";
+
 
 function diff(target: number) {
   const ms = Math.max(0, target - Date.now());
