@@ -6,16 +6,34 @@ import { Petals } from "@/components/Petals";
 import { Reveal } from "@/components/Reveal";
 import { Countdown } from "@/components/Countdown";
 import { Weather } from "@/components/Weather";
+import { ScratchCard } from "@/components/ScratchCard";
+import {
+  BowDoodle,
+  DoodleDivider,
+  HeartDoodle,
+  LeafSprigDoodle,
+  MarigoldDoodle,
+  SparkleDoodle,
+  SquiggleDoodle,
+  StarDoodle,
+} from "@/components/Doodles";
+import {
+  HaldiCaricature,
+  SangeetCaricature,
+  WeddingCaricature,
+} from "@/components/EventCaricatures";
 import {
   COUPLE,
   EVENTS,
   GOOD_TO_KNOW,
   HOTELS,
+  STORY,
   calendarLink,
   mapsDirections,
   mapsEmbed,
   mapsView,
 } from "@/lib/wedding";
+
 import venueImg from "@/assets/venue.jpg";
 import sprig from "@/assets/sprig.png";
 
