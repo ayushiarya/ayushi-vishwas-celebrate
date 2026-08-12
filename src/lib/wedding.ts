@@ -69,76 +69,88 @@ export const EVENTS: WeddingEvent[] = [
   },
 ];
 
-export const STORY = [
+export type Spot = {
+  name: string;
+  tag: string;
+  text: string;
+  link: string;
+};
+
+export const PLACES_TO_VISIT: Spot[] = [
   {
-    label: "How We Met",
-    text: "A crowded Jamshedpur wedding, a shared plate of jalebi, and a conversation that refused to end.",
+    name: "Jubilee Park",
+    tag: "Evening lights",
+    text: "Jamshedpur's own Vrindavan Garden — musical fountains, rose gardens and paani-puri carts at the gate.",
+    link: "https://www.google.com/maps/search/Jubilee+Park+Jamshedpur",
   },
   {
-    label: "Our Journey",
-    text: "Four years of late-night calls, unplanned road trips and a friendship that quietly became everything.",
+    name: "Dalma Wildlife Sanctuary",
+    tag: "Hills & elephants",
+    text: "A winding drive up the Dalma range with a hilltop Shiva temple and views over the whole valley.",
+    link: "https://www.google.com/maps/search/Dalma+Wildlife+Sanctuary",
   },
   {
-    label: "The Proposal",
-    text: "A hilltop at dusk, one very nervous speech, and a yes said before the question was finished.",
+    name: "Dimna Lake",
+    tag: "Sunrise spot",
+    text: "Calm water at the foot of the hills — boating, breakfast chai and the best morning photos.",
+    link: "https://www.google.com/maps/search/Dimna+Lake+Jamshedpur",
   },
   {
-    label: "The Engagement",
-    text: "Two families, one long table, and the happiest chaos we have ever known.",
+    name: "Bhuvaneshwari Temple, Telco",
+    tag: "Blessings",
+    text: "A hilltop temple with 100-odd steps and a very generous prasad counter.",
+    link: "https://www.google.com/maps/search/Bhuvaneshwari+Temple+Jamshedpur",
   },
   {
-    label: "The Wedding",
-    text: "And now — the 25th, the hills, and all of you around us.",
+    name: "Tata Steel Zoological Park",
+    tag: "Family favourite",
+    text: "Sprawling green zoo and nature park right beside Jubilee — lovely for a lazy morning.",
+    link: "https://www.google.com/maps/search/Tata+Steel+Zoological+Park",
+  },
+  {
+    name: "Bistupur Market",
+    tag: "Shopping",
+    text: "Bangles, tussar silk, Sohrai art and street shopping — bargain shamelessly, it is expected.",
+    link: "https://www.google.com/maps/search/Bistupur+Market+Jamshedpur",
   },
 ];
 
-export const HOTELS = [
+export const FOOD_SPOTS: Spot[] = [
   {
-    name: "The Sonnet",
-    distance: "6 km from venue",
-    category: "5 star · Luxury",
-    link: "https://www.google.com/maps/search/The+Sonnet+Jamshedpur",
+    name: "Brubeck Bakery, Bistupur",
+    tag: "Chai & patties",
+    text: "The city's classic bakery — veg patties, cream rolls and a strong cup of chai.",
+    link: "https://www.google.com/maps/search/Brubeck+Bakery+Jamshedpur",
   },
   {
-    name: "Hotel Alcor",
-    distance: "8 km from venue",
-    category: "4 star · Boutique",
-    link: "https://www.google.com/maps/search/Hotel+Alcor+Jamshedpur",
+    name: "Novelty Restaurant",
+    tag: "Old school Mughlai",
+    text: "Biryani, mutton curry and rumali roti the way Jamshedpur has eaten it for decades.",
+    link: "https://www.google.com/maps/search/Novelty+Restaurant+Jamshedpur",
   },
   {
-    name: "Ginger Jamshedpur",
-    distance: "10 km from venue",
-    category: "3 star · Comfort",
-    link: "https://www.google.com/maps/search/Ginger+Jamshedpur",
+    name: "Sakchi Golchakkar street food",
+    tag: "Chaat crawl",
+    text: "Litti chokha, aloo chop, jhaal muri and gulab jamun — go hungry, go late evening.",
+    link: "https://www.google.com/maps/search/Sakchi+Golchakkar+Jamshedpur",
   },
   {
-    name: "Hotel Boulevard",
-    distance: "9 km from venue",
-    category: "3 star · Value",
-    link: "https://www.google.com/maps/search/Hotel+Boulevard+Jamshedpur",
-  },
-];
-
-export const GOOD_TO_KNOW = [
-  {
-    title: "Dress Code",
-    text: "Haldi — yellows and whites. Sangeet — festive jewel tones. Wedding — traditional formals. Evenings in November are cool; carry a light shawl.",
+    name: "The Madras Cafe / South Indian joints, Kadma",
+    tag: "Breakfast",
+    text: "Filter coffee, ghee roast dosa and idli sambar to fix a late sangeet night.",
+    link: "https://www.google.com/maps/search/South+Indian+restaurant+Kadma+Jamshedpur",
   },
   {
-    title: "Timings",
-    text: "Please arrive 30 minutes before each ceremony. The baraat and the pheras run on time — we promise.",
+    name: "Sanjha Chulha",
+    tag: "Dinner",
+    text: "Hearty Punjabi thalis and tandoori — the family's go-to for a big table.",
+    link: "https://www.google.com/maps/search/Sanjha+Chulha+Jamshedpur",
   },
   {
-    title: "Parking",
-    text: "Complimentary valet at the resort gate. Additional guest parking is available on the lower lawn.",
-  },
-  {
-    title: "Contact",
-    text: "Family desk · +91 90000 00000 · reachable from 8 AM to 11 PM on both days.",
-  },
-  {
-    title: "Things to Remember",
-    text: "Comfortable footwear for the lawns, a light layer for the night air, and your appetite for far too much food.",
+    name: "Local sweet shops, Sakchi",
+    tag: "Mithai",
+    text: "Bengali-style rasgulla, sandesh and warm malpua — carry a box home, please.",
+    link: "https://www.google.com/maps/search/sweet+shop+Sakchi+Jamshedpur",
   },
 ];
 
