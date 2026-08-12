@@ -6,7 +6,7 @@ import { Petals } from "@/components/Petals";
 import { Reveal } from "@/components/Reveal";
 import { Countdown } from "@/components/Countdown";
 import { Weather } from "@/components/Weather";
-import { ScratchCard } from "@/components/ScratchCard";
+
 import {
   BowDoodle,
   DoodleDivider,
@@ -25,9 +25,8 @@ import {
 import {
   COUPLE,
   EVENTS,
-  GOOD_TO_KNOW,
-  HOTELS,
-  STORY,
+  FOOD_SPOTS,
+  PLACES_TO_VISIT,
   calendarLink,
   mapsDirections,
   mapsEmbed,
@@ -138,13 +137,15 @@ function Invitation() {
           </div>
         </section>
 
-        {/* SAVE THE DATE — scratch card */}
+        {/* SAVE THE DATE */}
         <section id="save-the-date" className="relative overflow-hidden px-5 py-24 sm:py-32">
           <div className="wash-sage pointer-events-none absolute inset-0 opacity-60" />
           <div className="relative mx-auto max-w-4xl">
             <SectionHeading eyebrow="Save the date" />
             <Reveal delay={120} className="mt-12">
-              <ScratchCard>
+              <div className="filmi-banner relative mx-auto max-w-2xl px-6 py-12 text-center">
+                <MarigoldDoodle className="absolute -left-4 -top-5 w-12 text-mustard float-slow" />
+                <MarigoldDoodle className="absolute -right-4 -bottom-5 w-12 text-mustard float-slow" />
                 <p className="eyebrow">Mark your calendars</p>
                 <p className="script mt-3 text-5xl leading-[1.05] text-primary sm:text-7xl">
                   24<sup className="font-display text-2xl text-gold">th</sup> &amp; 25
@@ -158,8 +159,9 @@ function Invitation() {
                   </span>
                   <HeartDoodle className="w-4" />
                 </div>
-              </ScratchCard>
+              </div>
             </Reveal>
+
 
             <div className="mt-14 grid gap-6 sm:grid-cols-2 sm:gap-10">
               {[
@@ -219,38 +221,7 @@ function Invitation() {
           </div>
         </section>
 
-        {/* OUR STORY */}
-        <section id="story" className="relative overflow-hidden px-5 py-24 sm:py-32">
-          <div className="wash-lavender pointer-events-none absolute inset-0 opacity-50" />
-          <div className="relative mx-auto max-w-3xl">
-            <SectionHeading eyebrow="Our story" />
-            <ol className="mt-14 space-y-10">
-              {STORY.map((s, i) => (
-                <Reveal as="li" key={s.label} delay={i * 90}>
-                  <div
-                    className={`flex items-start gap-5 ${i % 2 ? "sm:ml-16" : "sm:mr-16"}`}
-                  >
-                    <span className="mt-1 shrink-0 text-gold">
-                      {i % 2 ? (
-                        <HeartDoodle className="w-6 text-rose float-slow" />
-                      ) : (
-                        <MarigoldDoodle className="w-7 text-mustard float-slow" />
-                      )}
-                    </span>
-                    <div>
-                      <p className="text-[0.6rem] tracking-[0.32em] text-muted-foreground uppercase">
-                        {s.label}
-                      </p>
-                      <p className="mt-2 font-display text-xl leading-relaxed text-foreground/85">
-                        {s.text}
-                      </p>
-                    </div>
-                  </div>
-                </Reveal>
-              ))}
-            </ol>
-          </div>
-        </section>
+
 
         {/* EVENTS */}
         <section id="events" className="relative overflow-hidden px-5 py-24 sm:py-32">
@@ -417,7 +388,7 @@ function Invitation() {
               {[
                 {
                   t: "Nearest airport",
-                  d: "Sonari Airport (limited flights) · Ranchi (IXR) is the main gateway, 130 km away.",
+                  d: "Birsa Munda Airport, Ranchi (IXR) — 130 km away, about 3 hours by road.",
                 },
                 {
                   t: "Nearest railway station",
@@ -462,31 +433,8 @@ function Invitation() {
               ))}
             </div>
 
-            <Reveal className="mt-20">
-              <h3 className="script text-3xl text-primary">Stay</h3>
-            </Reveal>
-            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {HOTELS.map((h, i) => (
-                <Reveal key={h.name} delay={i * 90}>
-                  <div className="card-organic card-organic-alt relative flex h-full flex-col px-6 py-8 text-center">
-                    <h4 className="font-display text-2xl text-primary">{h.name}</h4>
-                    <SquiggleDoodle className="my-4 w-full text-antique-gold/70" />
-                    <p className="text-[0.58rem] tracking-[0.26em] text-muted-foreground uppercase">
-                      {h.category}
-                    </p>
-                    <p className="mt-2 text-sm text-foreground/75">{h.distance}</p>
-                    <a
-                      href={h.link}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="mt-auto pt-6 text-[0.58rem] tracking-[0.24em] text-primary uppercase underline underline-offset-4"
-                    >
-                      Book / contact
-                    </a>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
+            <div className="hidden" />
+
 
             <Reveal className="mt-20">
               <h3 className="script text-3xl text-primary">Getting around</h3>
@@ -519,23 +467,68 @@ function Invitation() {
           </div>
         </section>
 
-        {/* GOOD TO KNOW */}
-        <section className="px-5 py-24 sm:py-32">
-          <div className="mx-auto max-w-5xl">
-            <SectionHeading eyebrow="Good to know" />
-            <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {GOOD_TO_KNOW.map((c, i) => (
-                <Reveal key={c.title} delay={i * 90}>
-                  <div className="card-organic h-full px-6 py-8">
-                    <h3 className="font-display text-2xl text-primary">{c.title}</h3>
+        {/* WHILE YOU'RE HERE */}
+        <section id="while-here" className="relative overflow-hidden px-5 py-24 sm:py-32">
+          <div className="wash-lavender pointer-events-none absolute inset-0 opacity-50" />
+          <div className="relative mx-auto max-w-6xl">
+            <SectionHeading eyebrow="While you're here" title="Jamshedpur, our way" />
+
+            <Reveal className="mt-16">
+              <h3 className="script text-3xl text-primary">Places to see</h3>
+            </Reveal>
+            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {PLACES_TO_VISIT.map((p, i) => (
+                <Reveal key={p.name} delay={i * 70}>
+                  <div
+                    className={`card-organic ${i % 2 ? "card-organic-alt rotate-[0.6deg]" : "-rotate-[0.6deg]"} relative h-full px-6 py-8`}
+                  >
+                    <MarigoldDoodle className="absolute -right-3 -top-4 w-9 text-mustard/80 doodle-hover" />
+                    <p className="text-[0.55rem] tracking-[0.3em] text-rose uppercase">{p.tag}</p>
+                    <h4 className="mt-2 font-display text-2xl text-primary">{p.name}</h4>
+                    <SquiggleDoodle className="my-4 w-16 text-antique-gold/70" />
+                    <p className="text-sm leading-relaxed text-muted-foreground">{p.text}</p>
+                    <a
+                      href={p.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-5 inline-block text-[0.58rem] tracking-[0.24em] text-primary uppercase underline underline-offset-4"
+                    >
+                      Open in maps
+                    </a>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+
+            <Reveal className="mt-20">
+              <h3 className="script text-3xl text-primary">Must-eat, must-try</h3>
+            </Reveal>
+            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {FOOD_SPOTS.map((f, i) => (
+                <Reveal key={f.name} delay={i * 70}>
+                  <div
+                    className={`card-organic ${i % 2 ? "-rotate-[0.6deg]" : "card-organic-alt rotate-[0.6deg]"} relative h-full px-6 py-8`}
+                  >
+                    <HeartDoodle className="absolute -left-3 -top-4 w-7 text-rose twinkle" />
+                    <p className="text-[0.55rem] tracking-[0.3em] text-sage uppercase">{f.tag}</p>
+                    <h4 className="mt-2 font-display text-2xl text-primary">{f.name}</h4>
                     <SquiggleDoodle className="my-4 w-16 text-rose/70" />
-                    <p className="text-sm leading-relaxed text-muted-foreground">{c.text}</p>
+                    <p className="text-sm leading-relaxed text-muted-foreground">{f.text}</p>
+                    <a
+                      href={f.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-5 inline-block text-[0.58rem] tracking-[0.24em] text-primary uppercase underline underline-offset-4"
+                    >
+                      Open in maps
+                    </a>
                   </div>
                 </Reveal>
               ))}
             </div>
           </div>
         </section>
+
 
         {/* FINAL */}
         <section className="relative flex min-h-[90svh] items-center justify-center overflow-hidden px-5 py-24">
