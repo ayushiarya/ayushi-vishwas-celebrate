@@ -52,17 +52,17 @@
   /* Warm, handcrafted Indian wedding stationery palette */
   --ivory: oklch(0.972 0.014 84);
   --champagne: oklch(0.945 0.024 80);
-  --wine: oklch(0.38 0.098 18);
+  --wine: oklch(0.4 0.15 18);
   --blush: oklch(0.86 0.046 22);
-  --gold: oklch(0.74 0.09 78);
+  --gold: oklch(0.76 0.14 82);
   --antique-gold: oklch(0.66 0.082 68);
   --ink: oklch(0.29 0.024 32);
-  --sage: oklch(0.6 0.05 148);
+  --sage: oklch(0.58 0.1 150);
   --olive: oklch(0.52 0.058 122);
-  --rose: oklch(0.7 0.068 18);
-  --peach: oklch(0.87 0.06 55);
-  --mustard: oklch(0.78 0.1 85);
-  --lavender: oklch(0.78 0.05 300);
+  --rose: oklch(0.66 0.14 15);
+  --peach: oklch(0.85 0.11 55);
+  --mustard: oklch(0.79 0.16 82);
+  --lavender: oklch(0.72 0.11 300);
 
   --background: var(--ivory);
   --foreground: var(--ink);
@@ -512,4 +512,41 @@
 
 @utility twinkle {
   animation: twinkle 4s ease-in-out infinite;
+}
+
+/* ── Bollywood-quirky extras ─────────────────────────────────────────── */
+
+@utility filmi-banner {
+  background:
+    radial-gradient(circle at 12% 20%, color-mix(in oklab, var(--mustard) 30%, transparent), transparent 55%),
+    radial-gradient(circle at 88% 80%, color-mix(in oklab, var(--rose) 28%, transparent), transparent 55%),
+    var(--card);
+  border: 2px dashed color-mix(in oklab, var(--wine) 42%, transparent);
+  border-radius: 26px 8px 26px 8px;
+  box-shadow: 6px 8px 0 color-mix(in oklab, var(--wine) 16%, transparent);
+  transform: rotate(-0.7deg);
+}
+
+@keyframes cari-sway {
+  0%, 100% { transform: translateY(0) rotate(-1.5deg); }
+  50% { transform: translateY(-7px) rotate(1.5deg); }
+}
+@keyframes cari-dance {
+  0%, 100% { transform: translateX(-5px) rotate(-4deg); }
+  50% { transform: translateX(5px) rotate(4deg); }
+}
+@keyframes cari-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.cari .cari-sway { animation: cari-sway 3.4s ease-in-out infinite; transform-origin: 84px 210px; }
+.cari .cari-sway-alt { animation: cari-sway 3.4s ease-in-out infinite 0.6s; transform-origin: 178px 210px; }
+.cari .cari-dance { animation: cari-dance 1.5s ease-in-out infinite; transform-origin: 82px 212px; }
+.cari .cari-dance-alt { animation: cari-dance 1.5s ease-in-out infinite 0.35s; transform-origin: 178px 212px; }
+.cari .cari-spin { animation: cari-spin 9s linear infinite; }
+.cari .cari-twinkle { animation: twinkle 2.2s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .cari * { animation: none !important; }
 }
