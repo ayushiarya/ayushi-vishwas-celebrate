@@ -1,4 +1,4 @@
-import { auth, defineMcp, type AnyToolDefinition } from "@lovable.dev/mcp-js";
+import { auth, defineMcp } from "@lovable.dev/mcp-js";
 
 import getVenueTool from "./tools/get-venue";
 import getWeatherTool from "./tools/get-weather";
@@ -24,5 +24,5 @@ export default defineMcp({
     getVenueTool,
     getWeatherTool,
     listRecommendationsTool,
-  ],
+  ] as Parameters<typeof defineMcp>[0]["tools"],
 });
