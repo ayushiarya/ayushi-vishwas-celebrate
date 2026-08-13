@@ -1,0 +1,121 @@
+{
+  "version": 1,
+  "sdk_version": "0.26.2",
+  "path": "/mcp",
+  "auth": {
+    "type": "oauth",
+    "issuer": "https://cqudkqpgcvkoauoxgmmk.supabase.co/auth/v1",
+    "accepted_audiences": [
+      "authenticated"
+    ]
+  },
+  "mcp": {
+    "server": {
+      "name": "ayushi-vishwas-suite",
+      "version": "0.1.0",
+      "title": "Ayushi & Vishwas Suite"
+    },
+    "tools": [
+      {
+        "name": "get_wedding_details",
+        "title": "Get wedding details",
+        "description": "Get the core details of Ayushi & Vishwas's wedding: couple names, city, venue and the ceremony date.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_events",
+        "title": "List wedding events",
+        "description": "List every wedding function (Haldi, Sangeet & Engagement, Wedding) with timings, dress code and a Google Calendar link.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_venue",
+        "title": "Get venue and directions",
+        "description": "Get the wedding venue address, coordinates, and Google Maps view/directions links for Hill View Resort, Jamshedpur.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_jamshedpur_weather",
+        "title": "Get Jamshedpur weather",
+        "description": "Get the current weather in Jamshedpur (near the wedding venue) so guests can pack accordingly.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": false,
+          "openWorldHint": true
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_recommendations",
+        "title": "List Jamshedpur recommendations",
+        "description": "List the couple's 'While You're Here' recommendations in Jamshedpur — places to visit, food spots, or both.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "category": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "enum": [
+                    "places",
+                    "food",
+                    "all"
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Which recommendations to return. Use null for all."
+            }
+          },
+          "required": [
+            "category"
+          ]
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
