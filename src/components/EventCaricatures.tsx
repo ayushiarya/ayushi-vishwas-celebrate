@@ -189,3 +189,81 @@ export function WeddingCaricature({ className = "" }: Props) {
     </svg>
   );
 }
+
+/** Hero characters: Ayushi & Vishwas waving, in everyday festive wear. */
+export function CoupleWaving({ className = "" }: Props) {
+  return (
+    <svg
+      viewBox="0 0 260 230"
+      className={`cari h-auto w-full ${className}`}
+      role="img"
+      aria-label="Illustration of Ayushi and Vishwas waving"
+    >
+      {/* confetti */}
+      <g className="cari-twinkle">
+        <circle cx="30" cy="30" r="4" fill="#e8b53a" />
+        <circle cx="232" cy="44" r="3.4" fill="#c9548a" />
+        <circle cx="128" cy="16" r="3" fill="#8fae7a" />
+      </g>
+
+      {/* Ayushi */}
+      <g className="cari-sway">
+        <path d="M 60 212 Q 48 150 84 138 Q 120 150 108 212 Z" fill="#c9548a" stroke="#7d2a45" strokeWidth="2" />
+        <path d="M 62 184 Q 84 192 106 184" stroke="#f2d268" strokeWidth="2.5" fill="none" />
+        {/* waving arm */}
+        <line x1="66" y1="148" x2="40" y2="112" stroke="#e0a878" strokeWidth="8" strokeLinecap="round" />
+        <circle cx="38" cy="106" r="6" fill="#e0a878" stroke="#5b2b23" strokeWidth="1.5" />
+        <line x1="104" y1="148" x2="124" y2="176" stroke="#e0a878" strokeWidth="8" strokeLinecap="round" />
+        <Face x={84} y={116}>
+          <circle cx="0" cy="-15" r="2.6" fill="#b5322f" />
+          <circle cx="-22" cy="7" r="3.2" fill="#e8b53a" />
+          <circle cx="22" cy="7" r="3.2" fill="#e8b53a" />
+        </Face>
+        <BrideHair x={84} y={116} />
+      </g>
+
+      {/* Vishwas */}
+      <g className="cari-sway-alt">
+        <path d="M 152 212 Q 144 152 178 140 Q 212 152 204 212 Z" fill="#7d8f5f" stroke="#4a5a35" strokeWidth="2" />
+        <line x1="160" y1="150" x2="136" y2="176" stroke="#c98a58" strokeWidth="8" strokeLinecap="round" />
+        <line x1="198" y1="150" x2="224" y2="114" stroke="#c98a58" strokeWidth="8" strokeLinecap="round" />
+        <circle cx="226" cy="108" r="6" fill="#c98a58" stroke="#5b2b23" strokeWidth="1.5" />
+        <Face x={178} y={118} skin="#c98a58">
+          <ellipse cx="0" cy="6" rx="9" ry="4" fill="#3a1d18" opacity="0.25" />
+        </Face>
+        <path d="M 156 118 Q 154 94 178 94 Q 202 94 200 118 Q 192 106 178 106 Q 164 106 156 118" fill="#241612" />
+      </g>
+
+      {/* little heart between them */}
+      <path
+        className="cari-twinkle"
+        d="M 130 96 c -6 -8 -18 -2 -12 8 c 4 7 12 12 12 12 s 8 -5 12 -12 c 6 -10 -6 -16 -12 -8 z"
+        fill="#c9548a"
+      />
+    </svg>
+  );
+}
+
+/** Small peeking characters for corners of sections. */
+export function CouplePeeking({ className = "" }: Props) {
+  return (
+    <svg
+      viewBox="0 0 140 90"
+      className={`cari h-auto w-full ${className}`}
+      role="img"
+      aria-label="Illustration of the couple peeking over an edge"
+    >
+      <g className="cari-sway">
+        <Face x={44} y={46}>
+          <circle cx="0" cy="-15" r="2.4" fill="#b5322f" />
+        </Face>
+        <BrideHair x={44} y={46} />
+        <path d="M 20 74 h 100" stroke="#7d2a45" strokeWidth="0" />
+      </g>
+      <g className="cari-sway-alt">
+        <Face x={96} y={48} skin="#c98a58" />
+        <path d="M 74 48 Q 72 26 96 26 Q 120 26 118 48 Q 110 36 96 36 Q 82 36 74 48" fill="#241612" />
+      </g>
+    </svg>
+  );
+}
