@@ -33,7 +33,11 @@ export function Envelope({ onOpen }: { onOpen: () => void }) {
       }}
     >
       <div className="w-full max-w-lg text-center">
-        <p className="eyebrow mb-8 block">An invitation awaits</p>
+        <p className="hand mb-2 text-3xl text-primary sm:text-4xl">Psst… you&apos;re invited.</p>
+        <p className="mb-8 text-[0.62rem] tracking-[0.3em] text-muted-foreground uppercase">
+          One family. Two days. Zero chill.
+        </p>
+
 
         <button
           type="button"
