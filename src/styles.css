@@ -31,6 +31,9 @@
   --font-display: "Cormorant Garamond", Georgia, serif;
   --font-script: "Italiana", "Cormorant Garamond", serif;
   --font-body: "Jost", system-ui, sans-serif;
+  --font-poster: "Fraunces", "Cormorant Garamond", Georgia, serif;
+  --font-hand: "Caveat", "Segoe Script", cursive;
+
   --color-ivory: var(--ivory);
   --color-champagne: var(--champagne);
   --color-wine: var(--wine);
