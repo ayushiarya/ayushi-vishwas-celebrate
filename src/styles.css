@@ -553,3 +553,110 @@
 @media (prefers-reduced-motion: reduce) {
   .cari * { animation: none !important; }
 }
+
+/* ── Bollywood poster layer ──────────────────────────────────────────── */
+
+@utility poster-title {
+  font-family: var(--font-poster);
+  font-weight: 900;
+  line-height: 0.92;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+  color: var(--wine);
+  text-shadow:
+    2px 2px 0 color-mix(in oklab, var(--mustard) 70%, transparent),
+    4px 4px 0 color-mix(in oklab, var(--wine) 18%, transparent);
+}
+
+@utility poster-sub {
+  font-family: var(--font-poster);
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: 0.01em;
+  color: color-mix(in oklab, var(--wine) 85%, transparent);
+}
+
+@utility hand {
+  font-family: var(--font-hand);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  color: color-mix(in oklab, var(--wine) 78%, transparent);
+}
+
+@utility hand-note {
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: var(--rose);
+  transform: rotate(-4deg);
+  display: inline-block;
+}
+
+/* little sticker/stamp label */
+@utility sticker {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.6rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1.5px dashed color-mix(in oklab, var(--wine) 40%, transparent);
+  background-color: color-mix(in oklab, var(--mustard) 30%, var(--card));
+  color: var(--wine);
+  transform: rotate(-2deg);
+}
+
+/* masking-tape strip */
+@utility tape {
+  position: absolute;
+  width: 92px;
+  height: 26px;
+  background: color-mix(in oklab, var(--mustard) 55%, transparent);
+  border-left: 1px dashed color-mix(in oklab, var(--wine) 25%, transparent);
+  border-right: 1px dashed color-mix(in oklab, var(--wine) 25%, transparent);
+  opacity: 0.75;
+}
+
+/* scene card for events */
+@utility scene-card {
+  position: relative;
+  background-color: var(--card);
+  border: 2px solid color-mix(in oklab, var(--wine) 38%, transparent);
+  border-radius: 28px 8px 28px 8px;
+  box-shadow: 7px 9px 0 color-mix(in oklab, var(--wine) 14%, transparent);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s ease;
+
+  &:hover {
+    transform: translateY(-6px) rotate(-0.6deg);
+    box-shadow: 10px 14px 0 color-mix(in oklab, var(--wine) 18%, transparent);
+  }
+}
+
+@utility scene-card-alt {
+  border-radius: 8px 28px 8px 28px;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+}
+@utility bob-slow {
+  animation: bob 6s ease-in-out infinite;
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@utility marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 26s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none !important; }
+}
