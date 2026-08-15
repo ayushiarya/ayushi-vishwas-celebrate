@@ -443,7 +443,7 @@ function Invitation() {
               ))}
             </div>
 
-            <div className="hidden" />
+
 
 
             <Reveal className="mt-20">
