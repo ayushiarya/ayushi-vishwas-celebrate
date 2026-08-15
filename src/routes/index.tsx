@@ -147,6 +147,18 @@ function Invitation() {
           </div>
         </section>
 
+        <FilmiMarquee
+          items={[
+            "Dhol bajne wala hai",
+            "Bring your dancing shoes",
+            "Extra jalebi guaranteed",
+            "Aunties on standby",
+            "Two days of pure filmi",
+          ]}
+        />
+
+
+
         {/* SAVE THE DATE */}
         <section id="save-the-date" className="relative overflow-hidden px-5 py-24 sm:py-32">
           <div className="wash-sage pointer-events-none absolute inset-0 opacity-60" />
