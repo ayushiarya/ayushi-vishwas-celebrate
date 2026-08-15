@@ -389,7 +389,12 @@ function Invitation() {
         {/* TRAVEL & STAY */}
         <section id="travel" className="px-5 py-24 sm:py-32">
           <div className="mx-auto max-w-6xl">
-            <SectionHeading eyebrow="Travel & stay" />
+            <SectionHeading
+              eyebrow="Travel & stay"
+              title="Pahunche Kaise?"
+              note="trains, cabs, and one very scenic drive"
+            />
+
 
             <Reveal className="mt-16">
               <h3 className="script text-3xl text-primary">Getting to Jamshedpur</h3>
