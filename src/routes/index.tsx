@@ -6,6 +6,8 @@ import { Petals } from "@/components/Petals";
 import { Reveal } from "@/components/Reveal";
 import { Countdown } from "@/components/Countdown";
 import { Weather } from "@/components/Weather";
+import { Bunting, FilmiMarquee } from "@/components/Bunting";
+
 
 import {
   BowDoodle,
@@ -57,17 +59,27 @@ export const Route = createFileRoute("/")({
   component: Invitation,
 });
 
-function SectionHeading({ eyebrow, title }: { eyebrow: string; title?: string }) {
+function SectionHeading({
+  eyebrow,
+  title,
+  note,
+}: {
+  eyebrow: string;
+  title?: string;
+  note?: string;
+}) {
   return (
     <Reveal className="text-center">
       <p className="eyebrow">{eyebrow}</p>
       {title ? (
-        <h2 className="script mt-4 text-4xl text-primary sm:text-5xl">{title}</h2>
+        <h2 className="poster-title mt-4 text-4xl text-primary sm:text-6xl">{title}</h2>
       ) : null}
+      {note ? <p className="hand mt-3 text-2xl text-rose">{note}</p> : null}
       <DoodleDivider className="mt-5" />
     </Reveal>
   );
 }
+
 
 function Invitation() {
   const [opened, setOpened] = useState(false);
@@ -79,6 +91,8 @@ function Invitation() {
     <div className={opened ? "" : "max-h-screen overflow-hidden"}>
       <Envelope onOpen={() => setOpened(true)} />
       <Nav />
+      <Bunting className="fixed inset-x-0 top-[54px] z-30" />
+
 
       <main>
         {/* HERO */}
@@ -137,11 +151,28 @@ function Invitation() {
           </div>
         </section>
 
+        <FilmiMarquee
+          items={[
+            "Dhol bajne wala hai",
+            "Bring your dancing shoes",
+            "Extra jalebi guaranteed",
+            "Aunties on standby",
+            "Two days of pure filmi",
+          ]}
+        />
+
+
+
         {/* SAVE THE DATE */}
         <section id="save-the-date" className="relative overflow-hidden px-5 py-24 sm:py-32">
           <div className="wash-sage pointer-events-none absolute inset-0 opacity-60" />
           <div className="relative mx-auto max-w-4xl">
-            <SectionHeading eyebrow="Save the date" />
+            <SectionHeading
+              eyebrow="Save the date"
+              title="Date Note Kar Lijiye"
+              note="no excuses, we checked your calendar"
+            />
+
             <Reveal delay={120} className="mt-12">
               <div className="filmi-banner relative mx-auto max-w-2xl px-6 py-12 text-center">
                 <MarigoldDoodle className="absolute -left-4 -top-5 w-12 text-mustard float-slow" />
@@ -204,7 +235,12 @@ function Invitation() {
         <section className="relative overflow-hidden px-5 py-24 sm:py-32">
           <Petals count={8} opacity={0.3} />
           <div className="relative mx-auto max-w-4xl">
-            <SectionHeading eyebrow="The countdown begins" />
+            <SectionHeading
+              eyebrow="The countdown begins"
+              title="Shaadi Loading…"
+              note="the aunties are already packing"
+            />
+
             <div className="mt-14">
               <Reveal>
                 <Countdown />
@@ -226,7 +262,12 @@ function Invitation() {
         {/* EVENTS */}
         <section id="events" className="relative overflow-hidden px-5 py-24 sm:py-32">
           <div className="relative mx-auto max-w-6xl">
-            <SectionHeading eyebrow="The wedding celebrations" />
+            <SectionHeading
+              eyebrow="The wedding celebrations"
+              title="Teen Din, Teen Kahaniyan"
+              note="haldi, disco sangeet, and the big one"
+            />
+
             <div className="mt-24 grid gap-16 lg:grid-cols-3 lg:gap-8">
               {EVENTS.map((e, i) => {
                 const Caricature = caricatures[i]!;
@@ -379,7 +420,12 @@ function Invitation() {
         {/* TRAVEL & STAY */}
         <section id="travel" className="px-5 py-24 sm:py-32">
           <div className="mx-auto max-w-6xl">
-            <SectionHeading eyebrow="Travel & stay" />
+            <SectionHeading
+              eyebrow="Travel & stay"
+              title="Pahunche Kaise?"
+              note="trains, cabs, and one very scenic drive"
+            />
+
 
             <Reveal className="mt-16">
               <h3 className="script text-3xl text-primary">Getting to Jamshedpur</h3>
@@ -433,7 +479,7 @@ function Invitation() {
               ))}
             </div>
 
-            <div className="hidden" />
+
 
 
             <Reveal className="mt-20">
@@ -539,16 +585,21 @@ function Invitation() {
             </Reveal>
             <Reveal delay={200}>
               <div className="card-organic relative mt-10 px-6 py-14">
-                <h2 className="script text-5xl text-primary sm:text-6xl">
+                <Bunting className="absolute inset-x-0 -top-4" />
+                <h2 className="poster-title text-5xl text-primary sm:text-6xl">
                   {COUPLE.bride} & {COUPLE.groom}
                 </h2>
                 <DoodleDivider className="my-7" />
                 <p className="text-[0.65rem] tracking-[0.32em] text-muted-foreground uppercase">
                   24th & 25th November · {COUPLE.city}
                 </p>
-                <p className="mt-8 font-display text-xl italic text-primary/80">
+                <p className="hand mt-8 text-3xl text-rose">
+                  Aa jaiye — khaana bahut hai, dance floor bada hai.
+                </p>
+                <p className="mt-3 font-display text-xl italic text-primary/80">
                   We can&apos;t wait to celebrate with you.
                 </p>
+
                 <div
                   className="mx-auto mt-10 flex h-14 w-14 items-center justify-center rounded-full"
                   style={{

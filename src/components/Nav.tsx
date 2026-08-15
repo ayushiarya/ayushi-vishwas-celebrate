@@ -3,11 +3,12 @@ import { useEffect, useState } from "react";
 const LINKS = [
   { label: "Home", href: "#home" },
   { label: "Save the Date", href: "#save-the-date" },
-  { label: "Our Story", href: "#story" },
   { label: "Events", href: "#events" },
   { label: "Venue", href: "#venue" },
   { label: "Travel", href: "#travel" },
+  { label: "While You're Here", href: "#while-here" },
 ];
+
 
 export function Nav() {
   const [open, setOpen] = useState(false);
