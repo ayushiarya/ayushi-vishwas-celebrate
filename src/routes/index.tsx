@@ -57,17 +57,27 @@ export const Route = createFileRoute("/")({
   component: Invitation,
 });
 
-function SectionHeading({ eyebrow, title }: { eyebrow: string; title?: string }) {
+function SectionHeading({
+  eyebrow,
+  title,
+  note,
+}: {
+  eyebrow: string;
+  title?: string;
+  note?: string;
+}) {
   return (
     <Reveal className="text-center">
       <p className="eyebrow">{eyebrow}</p>
       {title ? (
-        <h2 className="script mt-4 text-4xl text-primary sm:text-5xl">{title}</h2>
+        <h2 className="poster-title mt-4 text-4xl text-primary sm:text-6xl">{title}</h2>
       ) : null}
+      {note ? <p className="hand mt-3 text-2xl text-rose">{note}</p> : null}
       <DoodleDivider className="mt-5" />
     </Reveal>
   );
 }
+
 
 function Invitation() {
   const [opened, setOpened] = useState(false);
