@@ -214,7 +214,12 @@ function Invitation() {
         <section className="relative overflow-hidden px-5 py-24 sm:py-32">
           <Petals count={8} opacity={0.3} />
           <div className="relative mx-auto max-w-4xl">
-            <SectionHeading eyebrow="The countdown begins" />
+            <SectionHeading
+              eyebrow="The countdown begins"
+              title="Shaadi Loading…"
+              note="the aunties are already packing"
+            />
+
             <div className="mt-14">
               <Reveal>
                 <Countdown />
