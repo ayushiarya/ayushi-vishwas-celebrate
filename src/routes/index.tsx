@@ -6,6 +6,8 @@ import { Petals } from "@/components/Petals";
 import { Reveal } from "@/components/Reveal";
 import { Countdown } from "@/components/Countdown";
 import { Weather } from "@/components/Weather";
+import { Bunting, FilmiMarquee } from "@/components/Bunting";
+
 
 import {
   BowDoodle,
