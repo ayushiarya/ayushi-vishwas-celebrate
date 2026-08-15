@@ -585,16 +585,21 @@ function Invitation() {
             </Reveal>
             <Reveal delay={200}>
               <div className="card-organic relative mt-10 px-6 py-14">
-                <h2 className="script text-5xl text-primary sm:text-6xl">
+                <Bunting className="absolute inset-x-0 -top-4" />
+                <h2 className="poster-title text-5xl text-primary sm:text-6xl">
                   {COUPLE.bride} & {COUPLE.groom}
                 </h2>
                 <DoodleDivider className="my-7" />
                 <p className="text-[0.65rem] tracking-[0.32em] text-muted-foreground uppercase">
                   24th & 25th November · {COUPLE.city}
                 </p>
-                <p className="mt-8 font-display text-xl italic text-primary/80">
+                <p className="hand mt-8 text-3xl text-rose">
+                  Aa jaiye — khaana bahut hai, dance floor bada hai.
+                </p>
+                <p className="mt-3 font-display text-xl italic text-primary/80">
                   We can&apos;t wait to celebrate with you.
                 </p>
+
                 <div
                   className="mx-auto mt-10 flex h-14 w-14 items-center justify-center rounded-full"
                   style={{
