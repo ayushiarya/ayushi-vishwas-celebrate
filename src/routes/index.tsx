@@ -91,7 +91,7 @@ function Invitation() {
     <div className={opened ? "" : "max-h-screen overflow-hidden"}>
       <Envelope onOpen={() => setOpened(true)} />
       <Nav />
-      <Bunting className="fixed inset-x-0 top-0 z-30" />
+      <Bunting className="fixed inset-x-0 top-[54px] z-30" />
 
 
       <main>
