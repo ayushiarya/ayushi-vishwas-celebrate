@@ -151,7 +151,12 @@ function Invitation() {
         <section id="save-the-date" className="relative overflow-hidden px-5 py-24 sm:py-32">
           <div className="wash-sage pointer-events-none absolute inset-0 opacity-60" />
           <div className="relative mx-auto max-w-4xl">
-            <SectionHeading eyebrow="Save the date" />
+            <SectionHeading
+              eyebrow="Save the date"
+              title="Date Note Kar Lijiye"
+              note="no excuses, we checked your calendar"
+            />
+
             <Reveal delay={120} className="mt-12">
               <div className="filmi-banner relative mx-auto max-w-2xl px-6 py-12 text-center">
                 <MarigoldDoodle className="absolute -left-4 -top-5 w-12 text-mustard float-slow" />
