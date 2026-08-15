@@ -236,7 +236,12 @@ function Invitation() {
         {/* EVENTS */}
         <section id="events" className="relative overflow-hidden px-5 py-24 sm:py-32">
           <div className="relative mx-auto max-w-6xl">
-            <SectionHeading eyebrow="The wedding celebrations" />
+            <SectionHeading
+              eyebrow="The wedding celebrations"
+              title="Teen Din, Teen Kahaniyan"
+              note="haldi, disco sangeet, and the big one"
+            />
+
             <div className="mt-24 grid gap-16 lg:grid-cols-3 lg:gap-8">
               {EVENTS.map((e, i) => {
                 const Caricature = caricatures[i]!;
