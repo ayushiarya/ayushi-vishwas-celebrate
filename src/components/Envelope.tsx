@@ -51,10 +51,6 @@ export function Envelope({ onOpen }: { onOpen: () => void }) {
         <p className="mb-7 text-[0.62rem] tracking-[0.3em] text-muted-foreground uppercase">
           One family · Two days · Zero chill
         </p>
-        {/* TEMP: deployment sync test — remove after verifying */}
-        <p className="mb-4 text-[0.6rem] tracking-[0.2em] text-rose uppercase">
-          deploy sync test ✓
-        </p>
 
         <button
           type="button"
