@@ -35,7 +35,7 @@ import {
   mapsView,
 } from "@/lib/wedding";
 
-import venueImg from "@/assets/venue.jpg";
+import venueImg from "@/assets/venue.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -351,8 +351,8 @@ function Invitation() {
                 <img
                   src={venueImg}
                   alt="Hill View Resort in Jamshedpur set for an evening wedding ceremony"
-                  width={1600}
-                  height={1008}
+                  width={1445}
+                  height={1088}
                   loading="lazy"
                   className="h-[46vh] w-full object-cover transition-transform duration-[2000ms] hover:scale-[1.04] sm:h-[62vh]"
                 />
