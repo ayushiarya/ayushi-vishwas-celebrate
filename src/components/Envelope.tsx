@@ -31,8 +31,7 @@ export function Envelope({ onOpen }: { onOpen: () => void }) {
         opening ? "pointer-events-none opacity-0 delay-[1400ms]" : "opacity-100"
       }`}
       style={{
-        background:
-          "radial-gradient(circle at 50% 30%, oklch(0.97 0.03 85), oklch(0.9 0.06 40))",
+        background: "radial-gradient(circle at 50% 30%, oklch(0.97 0.03 85), oklch(0.9 0.06 40))",
       }}
     >
       {/* toran on top */}
@@ -51,6 +50,10 @@ export function Envelope({ onOpen }: { onOpen: () => void }) {
         <p className="hand mb-1 text-3xl text-primary sm:text-4xl">Psst… you&apos;re invited.</p>
         <p className="mb-7 text-[0.62rem] tracking-[0.3em] text-muted-foreground uppercase">
           One family · Two days · Zero chill
+        </p>
+        {/* TEMP: deployment sync test — remove after verifying */}
+        <p className="mb-4 text-[0.6rem] tracking-[0.2em] text-rose uppercase">
+          deploy sync test ✓
         </p>
 
         <button
@@ -100,8 +103,7 @@ export function Envelope({ onOpen }: { onOpen: () => void }) {
             <div
               className="absolute inset-0"
               style={{
-                background:
-                  "linear-gradient(160deg, oklch(0.94 0.05 70), oklch(0.86 0.09 35))",
+                background: "linear-gradient(160deg, oklch(0.94 0.05 70), oklch(0.86 0.09 35))",
                 clipPath: "polygon(0 12%, 50% 62%, 100% 12%, 100% 100%, 0 100%)",
               }}
             />
@@ -121,8 +123,7 @@ export function Envelope({ onOpen }: { onOpen: () => void }) {
               }`}
               style={{
                 transformStyle: "preserve-3d",
-                background:
-                  "linear-gradient(180deg, oklch(0.92 0.06 55), oklch(0.83 0.11 32))",
+                background: "linear-gradient(180deg, oklch(0.92 0.06 55), oklch(0.83 0.11 32))",
                 clipPath: "polygon(0 0, 100% 0, 50% 100%)",
                 zIndex: opening ? 1 : 3,
               }}
