@@ -14,7 +14,57 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      guest_messages: {
+        Row: {
+          created_at: string
+          id: string
+          message: string
+          name: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          message: string
+          name: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          message?: string
+          name?: string
+        }
+        Relationships: []
+      }
+      rsvps: {
+        Row: {
+          bringing_plus_one: boolean
+          created_at: string
+          email: string
+          id: string
+          name: string
+          phone: string
+          plus_one_name: string | null
+        }
+        Insert: {
+          bringing_plus_one?: boolean
+          created_at?: string
+          email: string
+          id?: string
+          name: string
+          phone: string
+          plus_one_name?: string | null
+        }
+        Update: {
+          bringing_plus_one?: boolean
+          created_at?: string
+          email?: string
+          id?: string
+          name?: string
+          phone?: string
+          plus_one_name?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
