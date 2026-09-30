@@ -77,81 +77,16 @@ export type Spot = {
 };
 
 export const PLACES_TO_VISIT: Spot[] = [
-  {
-    name: "Jubilee Park",
-    tag: "Evening lights",
-    text: "Jamshedpur's own Vrindavan Garden — musical fountains, rose gardens and paani-puri carts at the gate.",
-    link: "https://www.google.com/maps/search/Jubilee+Park+Jamshedpur",
-  },
-  {
-    name: "Dalma Wildlife Sanctuary",
-    tag: "Hills & elephants",
-    text: "A winding drive up the Dalma range with a hilltop Shiva temple and views over the whole valley.",
-    link: "https://www.google.com/maps/search/Dalma+Wildlife+Sanctuary",
-  },
-  {
-    name: "Dimna Lake",
-    tag: "Sunrise spot",
-    text: "Calm water at the foot of the hills — boating, breakfast chai and the best morning photos.",
-    link: "https://www.google.com/maps/search/Dimna+Lake+Jamshedpur",
-  },
-  {
-    name: "Bhuvaneshwari Temple, Telco",
-    tag: "Blessings",
-    text: "A hilltop temple with 100-odd steps and a very generous prasad counter.",
-    link: "https://www.google.com/maps/search/Bhuvaneshwari+Temple+Jamshedpur",
-  },
-  {
-    name: "Tata Steel Zoological Park",
-    tag: "Family favourite",
-    text: "Sprawling green zoo and nature park right beside Jubilee — lovely for a lazy morning.",
-    link: "https://www.google.com/maps/search/Tata+Steel+Zoological+Park",
-  },
-  {
-    name: "Bistupur Market",
-    tag: "Shopping",
-    text: "Bangles, tussar silk, Sohrai art and street shopping — bargain shamelessly, it is expected.",
-    link: "https://www.google.com/maps/search/Bistupur+Market+Jamshedpur",
-  },
+  { name: "Jubilee Park", tag: "Evening lights", text: "Musical fountains, rose gardens and paani-puri carts at the gate.", link: "https://www.google.com/maps/search/Jubilee+Park+Jamshedpur" },
+  { name: "Jamshedpur Link Roads + Marine Drive", tag: "Long drive", text: "Tree-lined roads and the riverside Marine Drive — best at sunset.", link: "https://www.google.com/maps/search/Marine+Drive+Jamshedpur" },
+  { name: "Dalma Wildlife Sanctuary & Lake", tag: "Hills & water", text: "A winding drive up the Dalma range, with the lake waiting at its foot.", link: "https://www.google.com/maps/search/Dalma+Wildlife+Sanctuary" },
 ];
 
 export const FOOD_SPOTS: Spot[] = [
-  {
-    name: "Brubeck Bakery, Bistupur",
-    tag: "Chai & patties",
-    text: "The city's classic bakery — veg patties, cream rolls and a strong cup of chai.",
-    link: "https://www.google.com/maps/search/Brubeck+Bakery+Jamshedpur",
-  },
-  {
-    name: "Novelty Restaurant",
-    tag: "Old school Mughlai",
-    text: "Biryani, mutton curry and rumali roti the way Jamshedpur has eaten it for decades.",
-    link: "https://www.google.com/maps/search/Novelty+Restaurant+Jamshedpur",
-  },
-  {
-    name: "Sakchi Golchakkar street food",
-    tag: "Chaat crawl",
-    text: "Litti chokha, aloo chop, jhaal muri and gulab jamun — go hungry, go late evening.",
-    link: "https://www.google.com/maps/search/Sakchi+Golchakkar+Jamshedpur",
-  },
-  {
-    name: "The Madras Cafe / South Indian joints, Kadma",
-    tag: "Breakfast",
-    text: "Filter coffee, ghee roast dosa and idli sambar to fix a late sangeet night.",
-    link: "https://www.google.com/maps/search/South+Indian+restaurant+Kadma+Jamshedpur",
-  },
-  {
-    name: "Sanjha Chulha",
-    tag: "Dinner",
-    text: "Hearty Punjabi thalis and tandoori — the family's go-to for a big table.",
-    link: "https://www.google.com/maps/search/Sanjha+Chulha+Jamshedpur",
-  },
-  {
-    name: "Local sweet shops, Sakchi",
-    tag: "Mithai",
-    text: "Bengali-style rasgulla, sandesh and warm malpua — carry a box home, please.",
-    link: "https://www.google.com/maps/search/sweet+shop+Sakchi+Jamshedpur",
-  },
+  { name: "Brubeck Bakery", tag: "Bakery", text: "Patties, cream rolls and a strong cup of chai.", link: "https://www.google.com/maps/search/Brubeck+Bakery+Jamshedpur" },
+  { name: "The Moon", tag: "Dinner", text: "A Jamshedpur favourite for a big family table.", link: "https://www.google.com/maps/search/The+Moon+restaurant+Jamshedpur" },
+  { name: "Bistupur Khau Gali", tag: "Street food", text: "Go hungry, go late evening, try everything.", link: "https://www.google.com/maps/search/Khau+Gali+Bistupur+Jamshedpur" },
+  { name: "Chappan Bhog", tag: "Sweets", text: "Mithai boxes — carry one home, please.", link: "https://www.google.com/maps/search/Chappan+Bhog+Jamshedpur" },
 ];
 
 export const mapsDirections = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
