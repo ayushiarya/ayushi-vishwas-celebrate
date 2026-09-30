@@ -7,6 +7,7 @@ const LINKS = [
   { label: "Venue", href: "#venue" },
   { label: "Travel", href: "#travel" },
   { label: "While You're Here", href: "#while-here" },
+  { label: "RSVP", href: "#rsvp" },
 ];
 
 
@@ -30,9 +31,7 @@ export function Nav() {
       }`}
     >
       <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 md:flex md:justify-between">
-        <a href="#home" className="script min-w-0 truncate text-xl text-primary">
-          A <span className="text-gold">&</span> V
-        </a>
+        <span aria-hidden="true" />
 
         <nav className="hidden md:flex md:items-center md:gap-8">
           {LINKS.map((l) => (

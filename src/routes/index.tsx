@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
-import { Envelope } from "@/components/Envelope";
+import { RsvpForm, GuestMessageForm } from "@/components/GuestForms";
 import { Nav } from "@/components/Nav";
 import { Petals } from "@/components/Petals";
 import { Reveal } from "@/components/Reveal";
@@ -82,14 +81,12 @@ function SectionHeading({
 
 
 function Invitation() {
-  const [opened, setOpened] = useState(false);
 
   const caricatures = [HaldiCaricature, SangeetCaricature, WeddingCaricature];
   const eventTints = ["wash-sage", "wash-blush", "wash-lavender"];
 
   return (
-    <div className={opened ? "" : "max-h-screen overflow-hidden"}>
-      <Envelope onOpen={() => setOpened(true)} />
+    <div>
       <Nav />
       <Bunting className="fixed inset-x-0 top-[54px] z-30" />
 
@@ -149,6 +146,9 @@ function Invitation() {
               </p>
             </Reveal>
           </div>
+          <a href="#save-the-date" aria-label="Continue" className="absolute bottom-6 left-1/2 -translate-x-1/2 text-primary/60 animate-bounce">
+            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 5v14M6 13l6 6 6-6" /></svg>
+          </a>
         </section>
 
         <FilmiMarquee
@@ -156,7 +156,6 @@ function Invitation() {
             "Dhol bajne wala hai",
             "Bring your dancing shoes",
             "Extra jalebi guaranteed",
-            "Aunties on standby",
             "Two days of pure filmi",
           ]}
         />
@@ -194,68 +193,9 @@ function Invitation() {
             </Reveal>
 
 
-            <div className="mt-14 grid gap-6 sm:grid-cols-2 sm:gap-10">
-              {[
-                {
-                  day: "24",
-                  suffix: "th",
-                  items: ["Haldi — Morning", "Sangeet & Engagement — Evening"],
-                  tilt: "-rotate-1",
-                },
-                { day: "25", suffix: "th", items: ["Wedding — Evening"], tilt: "rotate-1" },
-              ].map((d, i) => (
-                <Reveal key={d.day} delay={i * 150}>
-                  <div
-                    className={`card-organic ${i === 1 ? "card-organic-alt" : ""} ${d.tilt} relative flex h-full flex-col items-center px-6 py-12 text-center`}
-                  >
-                    <MarigoldDoodle className="absolute -left-3 -top-4 w-10 text-mustard/80 doodle-hover" />
-                    <span className="script text-7xl text-primary">
-                      {d.day}
-                      <sup className="font-display text-2xl text-gold">{d.suffix}</sup>
-                    </span>
-                    <SquiggleDoodle className="my-6 w-20 text-antique-gold/70" />
-                    <ul className="space-y-3">
-                      {d.items.map((it) => (
-                        <li
-                          key={it}
-                          className="text-[0.7rem] tracking-[0.24em] text-muted-foreground uppercase"
-                        >
-                          {it}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
           </div>
         </section>
 
-        {/* COUNTDOWN */}
-        <section className="relative overflow-hidden px-5 py-24 sm:py-32">
-          <Petals count={8} opacity={0.3} />
-          <div className="relative mx-auto max-w-4xl">
-            <SectionHeading
-              eyebrow="The countdown begins"
-              title="Shaadi Loading…"
-              note="the aunties are already packing"
-            />
-
-            <div className="mt-14">
-              <Reveal>
-                <Countdown />
-              </Reveal>
-            </div>
-            <Reveal delay={200}>
-              <p className="mt-10 text-center font-display text-xl italic text-primary/80">
-                25th November · Evening · Wedding Ceremony
-              </p>
-              <p className="mt-2 text-center text-[0.62rem] tracking-[0.3em] text-muted-foreground uppercase">
-                {COUPLE.venue}, {COUPLE.city}
-              </p>
-            </Reveal>
-          </div>
-        </section>
 
 
 
@@ -340,6 +280,31 @@ function Invitation() {
             </div>
           </div>
         </section>
+        {/* COUNTDOWN */}
+        <section className="relative overflow-hidden px-5 py-24 sm:py-32">
+          <Petals count={8} opacity={0.3} />
+          <div className="relative mx-auto max-w-4xl">
+            <SectionHeading
+              eyebrow="The countdown begins"
+              title="Shaadi Loading…"
+              note="the aunties are already packing"
+            />
+
+            <div className="mt-14">
+              <Reveal>
+                <Countdown />
+              </Reveal>
+            </div>
+            <Reveal delay={200}>
+              <p className="mt-10 text-center font-display text-xl italic text-primary/80">
+                25th November · Evening · Wedding Ceremony
+              </p>
+              <p className="mt-2 text-center text-[0.62rem] tracking-[0.3em] text-muted-foreground uppercase">
+                {COUPLE.venue}, {COUPLE.city}
+              </p>
+            </Reveal>
+          </div>
+        </section>
 
 
         {/* VENUE */}
@@ -363,12 +328,6 @@ function Invitation() {
               <Reveal>
                 <p className="text-[0.65rem] tracking-[0.3em] text-muted-foreground uppercase">
                   {COUPLE.city}, {COUPLE.state}
-                </p>
-                <p className="mt-6 max-w-lg leading-relaxed text-muted-foreground">
-                  Set on a quiet ridge above the city, Hill View Resort looks out over terraced
-                  lawns and the soft blue outline of the Dalma hills. Open courtyards, old trees
-                  and long evenings of lantern light make it the kind of place a wedding is
-                  remembered by.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-4">
                   <a
@@ -575,41 +534,30 @@ function Invitation() {
           </div>
         </section>
 
-
-        {/* FINAL */}
-        <section className="relative flex min-h-[90svh] items-center justify-center overflow-hidden px-5 py-24">
-          <Petals count={18} opacity={0.55} />
-          <div className="relative w-full max-w-xl text-center">
-            <Reveal>
-              <p className="eyebrow">And so, our next chapter begins…</p>
+        {/* RSVP */}
+        <section id="rsvp" className="relative overflow-hidden px-5 py-24 sm:py-32">
+          <div className="wash-blush pointer-events-none absolute inset-0 opacity-50" />
+          <div className="relative mx-auto max-w-xl">
+            <SectionHeading eyebrow="RSVP" title="Aa Rahe Ho Na?" />
+            <Reveal className="mt-12">
+              <RsvpForm />
             </Reveal>
-            <Reveal delay={200}>
-              <div className="card-organic relative mt-10 px-6 py-14">
-                <Bunting className="absolute inset-x-0 -top-4" />
-                <h2 className="poster-title text-5xl text-primary sm:text-6xl">
-                  {COUPLE.bride} & {COUPLE.groom}
-                </h2>
-                <DoodleDivider className="my-7" />
-                <p className="text-[0.65rem] tracking-[0.32em] text-muted-foreground uppercase">
-                  24th & 25th November · {COUPLE.city}
-                </p>
-                <p className="hand mt-8 text-3xl text-rose">
-                  Aa jaiye — khaana bahut hai, dance floor bada hai.
-                </p>
-                <p className="mt-3 font-display text-xl italic text-primary/80">
-                  We can&apos;t wait to celebrate with you.
-                </p>
+          </div>
+        </section>
 
-                <div
-                  className="mx-auto mt-10 flex h-14 w-14 items-center justify-center rounded-full"
-                  style={{
-                    background:
-                      "radial-gradient(circle at 32% 30%, oklch(0.45 0.12 20), oklch(0.3 0.1 18))",
-                  }}
-                >
-                  <span className="script text-base text-primary-foreground">A&V</span>
-                </div>
-              </div>
+        {/* GUEST MESSAGE */}
+        <section id="message" className="relative overflow-hidden px-5 py-24 sm:py-32">
+          <Petals count={10} opacity={0.4} />
+          <div className="relative mx-auto max-w-xl">
+            <Reveal className="text-center">
+              <h2 className="script text-4xl text-primary sm:text-5xl">Leave a little piece of you here 💌</h2>
+              <p className="mt-4 font-display text-lg italic text-muted-foreground">
+                Something for us to read, laugh about, cry over and keep forever.
+              </p>
+              <DoodleDivider className="mt-5" />
+            </Reveal>
+            <Reveal className="mt-12">
+              <GuestMessageForm />
             </Reveal>
           </div>
         </section>
