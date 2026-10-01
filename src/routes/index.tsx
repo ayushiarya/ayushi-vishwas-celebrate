@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { RsvpForm, GuestMessageForm } from "@/components/GuestForms";
 import { Nav } from "@/components/Nav";
@@ -6,6 +7,8 @@ import { Reveal } from "@/components/Reveal";
 import { Countdown } from "@/components/Countdown";
 import { Weather } from "@/components/Weather";
 import { Bunting, FilmiMarquee } from "@/components/Bunting";
+import { Envelope } from "@/components/Envelope";
+import { ScrollProgress } from "@/components/ScrollProgress";
 
 
 import {
@@ -81,12 +84,15 @@ function SectionHeading({
 
 
 function Invitation() {
+  const [envelopeDone, setEnvelopeDone] = useState(false);
 
   const caricatures = [HaldiCaricature, SangeetCaricature, WeddingCaricature];
   const eventTints = ["wash-sage", "wash-blush", "wash-lavender"];
 
   return (
     <div>
+      {!envelopeDone && <Envelope onDone={() => setEnvelopeDone(true)} />}
+      <ScrollProgress />
       <Nav />
       <Bunting className="fixed inset-x-0 top-[54px] z-30" />
 
