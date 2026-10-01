@@ -33,6 +33,7 @@ export function Envelope({ onDone }: { onDone: () => void }) {
       const t = setTimeout(onDone, 900);
       return () => clearTimeout(t);
     }
+    return undefined;
   }, [phase, onDone]);
 
   if (phase === "gone") {
@@ -54,9 +55,6 @@ export function Envelope({ onDone }: { onDone: () => void }) {
           <MarigoldDoodle
             key={i}
             className={`w-6 sm:w-8 ${i % 2 ? "text-mustard" : "text-rose"} float-slow`}
-            // stagger the sway
-            // eslint-disable-next-line react/no-unknown-property
-            {...({ style: { animationDelay: `${(i % 6) * 0.4}s` } } as object)}
           />
         ))}
       </div>
