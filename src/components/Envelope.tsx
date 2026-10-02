@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { COUPLE } from "@/lib/wedding";
+import { Bunting } from "@/components/Bunting";
 import {
   HeartDoodle,
   MarigoldDoodle,
   SparkleDoodle,
   StarDoodle,
+  SquiggleDoodle,
 } from "@/components/Doodles";
 
 type Phase = "closed" | "opening" | "letter" | "gone";
