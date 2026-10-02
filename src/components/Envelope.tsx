@@ -45,17 +45,31 @@ export function Envelope({ onDone }: { onDone: () => void }) {
 
   return (
     <div
-      className={`fixed inset-0 z-[60] flex items-center justify-center overflow-hidden bg-ivory px-5 transition-opacity duration-700 ${
+      className={`fixed inset-0 z-[60] flex items-center justify-center overflow-hidden px-5 transition-opacity duration-700 ${
         phase === "letter" ? "opacity-0" : "opacity-100"
       }`}
-      style={{ perspective: "1400px" }}
+      style={{
+        perspective: "1400px",
+        background:
+          "radial-gradient(60% 45% at 15% 10%, color-mix(in oklab, var(--peach) 34%, transparent), transparent 70%)," +
+          "radial-gradient(55% 40% at 85% 18%, color-mix(in oklab, var(--lavender) 30%, transparent), transparent 70%)," +
+          "radial-gradient(60% 45% at 12% 85%, color-mix(in oklab, var(--sage) 28%, transparent), transparent 70%)," +
+          "radial-gradient(55% 40% at 88% 88%, color-mix(in oklab, var(--rose) 30%, transparent), transparent 70%)," +
+          "var(--ivory)",
+      }}
     >
+      {/* festive bunting across the top */}
+      <Bunting className="absolute inset-x-0 top-0 opacity-90" />
+
       {/* scattered doodles */}
-      <SparkleDoodle className="absolute left-[10%] top-[20%] w-8 text-gold/70 twinkle" />
-      <StarDoodle className="absolute right-[12%] top-[28%] w-6 text-lavender twinkle" />
-      <HeartDoodle className="absolute bottom-[14%] left-[14%] w-7 text-rose/70 twinkle" />
-      <MarigoldDoodle className="absolute bottom-[18%] right-[10%] w-10 text-mustard/70 float-slow" />
-      <MarigoldDoodle className="absolute left-[8%] top-[45%] w-8 text-rose/50 float-slow" />
+      <SparkleDoodle className="absolute left-[10%] top-[24%] w-8 text-gold twinkle" />
+      <StarDoodle className="absolute right-[12%] top-[32%] w-6 text-lavender twinkle" />
+      <HeartDoodle className="absolute bottom-[16%] left-[12%] w-7 text-rose twinkle" />
+      <MarigoldDoodle className="absolute bottom-[20%] right-[10%] w-10 text-mustard float-slow" />
+      <MarigoldDoodle className="absolute left-[7%] top-[50%] w-8 text-sage/80 float-slow" />
+      <HeartDoodle className="absolute right-[7%] top-[56%] w-6 text-peach float-slow" />
+      <SparkleDoodle className="absolute left-[22%] bottom-[8%] w-5 text-lavender twinkle" />
+      <SquiggleDoodle className="absolute right-[20%] top-[14%] w-16 text-rose/60 rotate-6" />
 
       {/* the postcard */}
       <div
