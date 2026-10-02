@@ -95,8 +95,12 @@ export function Envelope({ onDone }: { onDone: () => void }) {
 
           {/* hand-drawn stamp, top right */}
           <div
-            className="absolute right-5 top-5 flex h-20 w-16 rotate-6 flex-col items-center justify-center border-2 bg-card p-1 sm:right-6 sm:top-6"
-            style={{ borderColor: "color-mix(in oklab, var(--wine) 70%, transparent)" }}
+            className="absolute right-5 top-5 flex h-20 w-16 rotate-6 flex-col items-center justify-center border-2 p-1 sm:right-6 sm:top-6"
+            style={{
+              borderColor: "color-mix(in oklab, var(--wine) 70%, transparent)",
+              background:
+                "linear-gradient(160deg, color-mix(in oklab, var(--rose) 16%, var(--card)), color-mix(in oklab, var(--mustard) 16%, var(--card)))",
+            }}
           >
             <div
               className="flex h-full w-full flex-col items-center justify-center border"
@@ -117,9 +121,20 @@ export function Envelope({ onDone }: { onDone: () => void }) {
           <div className="py-2 text-center">
             <h1 className="poster-title text-4xl leading-tight tracking-tight sm:text-5xl">
               {COUPLE.bride}
-              <span className="block py-1 text-2xl text-gold">♡</span>
+              <span className="flex items-center justify-center gap-2 py-1">
+                <SparkleDoodle className="w-4 text-gold" />
+                <span className="text-2xl text-gold">♡</span>
+                <SparkleDoodle className="w-4 text-gold" />
+              </span>
               {COUPLE.groom}
             </h1>
+            <div className="mt-2 flex items-center justify-center gap-3" aria-hidden>
+              <MarigoldDoodle className="w-5 text-mustard" />
+              <HeartDoodle className="w-4 text-rose" />
+              <StarDoodle className="w-4 text-lavender" />
+              <HeartDoodle className="w-4 text-sage" />
+              <MarigoldDoodle className="w-5 text-mustard" />
+            </div>
           </div>
 
           {/* address lines + tap target */}
