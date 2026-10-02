@@ -93,23 +93,32 @@ export function Envelope({ onDone }: { onDone: () => void }) {
             }}
           />
 
-          {/* hand-drawn stamp, top right */}
-          <div
-            className="absolute right-5 top-5 flex h-20 w-16 rotate-6 flex-col items-center justify-center border-2 p-1 sm:right-6 sm:top-6"
-            style={{
-              borderColor: "color-mix(in oklab, var(--wine) 70%, transparent)",
-              background:
-                "linear-gradient(160deg, color-mix(in oklab, var(--rose) 16%, var(--card)), color-mix(in oklab, var(--mustard) 16%, var(--card)))",
-            }}
-          >
-            <div
-              className="flex h-full w-full flex-col items-center justify-center border"
-              style={{ borderColor: "color-mix(in oklab, var(--wine) 20%, transparent)" }}
-            >
-              <span className="eyebrow text-[9px]">India</span>
-              <MarigoldDoodle className="w-7 text-wine" />
-              <span className="eyebrow text-[9px]">Shaadi 2026</span>
-            </div>
+          {/* two postage stamps, top right */}
+          <div className="absolute right-4 top-4 flex gap-1.5 sm:right-6 sm:top-6">
+            {[
+              { city: "Bathinda", state: "Punjab", rot: "-rotate-6", tint: "var(--mustard)", doodle: <SparkleDoodle className="w-6 text-wine" /> },
+              { city: "Jamshedpur", state: "Jharkhand", rot: "rotate-6", tint: "var(--rose)", doodle: <MarigoldDoodle className="w-6 text-wine" /> },
+            ].map((s) => (
+              <div
+                key={s.city}
+                className={`flex h-[4.5rem] w-14 ${s.rot} flex-col items-center justify-center p-1 shadow-sm`}
+                style={{
+                  background: `color-mix(in oklab, ${s.tint} 22%, var(--card))`,
+                  outline: "2px dotted color-mix(in oklab, var(--wine) 55%, transparent)",
+                  outlineOffset: "-1px",
+                }}
+              >
+                <div
+                  className="flex h-full w-full flex-col items-center justify-center border text-center"
+                  style={{ borderColor: "color-mix(in oklab, var(--wine) 30%, transparent)" }}
+                >
+                  <span className="text-[7px] font-semibold uppercase tracking-wider text-wine">{s.city}</span>
+                  {s.doodle}
+                  <span className="text-[6px] uppercase tracking-widest text-wine/70">{s.state}</span>
+                </div>
+              </div>
+            ))}
+          </div>
           </div>
 
           {/* invite line */}
@@ -151,18 +160,38 @@ export function Envelope({ onDone }: { onDone: () => void }) {
               aria-label="Open the invitation"
               className="group relative"
             >
-              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-wine text-ivory shadow-lg transition-all duration-300 group-hover:rotate-12 group-hover:scale-110 group-active:scale-95">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  className="h-6 w-6"
-                >
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </span>
               <span className="absolute inset-0 animate-ping rounded-full border-2 border-wine opacity-20" />
+              <svg
+                viewBox="0 0 100 100"
+                className="relative h-20 w-20 drop-shadow-lg transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110 group-active:scale-95"
+              >
+                <defs>
+                  <radialGradient id="wax" cx="38%" cy="32%" r="70%">
+                    <stop offset="0%" stopColor="color-mix(in oklab, var(--wine) 60%, white)" />
+                    <stop offset="55%" stopColor="var(--wine)" />
+                    <stop offset="100%" stopColor="color-mix(in oklab, var(--wine) 70%, black)" />
+                  </radialGradient>
+                </defs>
+                {/* irregular wax blob */}
+                <path
+                  d="M50 4c8 0 11 5 18 7s13 1 17 8 1 12 4 19 7 11 5 19-8 9-11 15-3 13-10 17-13 0-23 3-13 6-20 2-6-10-12-14-12-6-15-13 2-12 0-19-6-12-2-19 10-7 14-12 8-10 15-13 10-4 15-4z"
+                  fill="url(#wax)"
+                />
+                <circle cx="50" cy="50" r="30" fill="none" stroke="color-mix(in oklab, var(--wine) 65%, black)" strokeWidth="2" />
+                <circle cx="50" cy="50" r="26" fill="none" stroke="color-mix(in oklab, var(--wine) 50%, white)" strokeWidth="0.8" strokeDasharray="2 2" opacity="0.7" />
+                <text
+                  x="50"
+                  y="58"
+                  textAnchor="middle"
+                  fontFamily="Fraunces, serif"
+                  fontSize="22"
+                  fontWeight="700"
+                  fill="color-mix(in oklab, var(--wine) 45%, white)"
+                >
+                  A♡V
+                </text>
+                <ellipse cx="36" cy="28" rx="10" ry="5" fill="white" opacity="0.18" transform="rotate(-25 36 28)" />
+              </svg>
             </button>
           </div>
 
