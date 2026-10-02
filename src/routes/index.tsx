@@ -210,7 +210,7 @@ function Invitation() {
           <div className="relative mx-auto max-w-6xl">
             <SectionHeading
               eyebrow="The wedding celebrations"
-              title="Teen Din, Teen Kahaniyan"
+              title="Do Din, Poora Dhamaal"
               note="haldi, disco sangeet, and the big one"
             />
 
@@ -316,7 +316,7 @@ function Invitation() {
         {/* VENUE */}
         <section id="venue" className="px-5 py-24 sm:py-32">
           <div className="mx-auto max-w-6xl">
-            <SectionHeading eyebrow="The venue" title={COUPLE.venue} />
+            <SectionHeading eyebrow="Where will you be staying" title={COUPLE.venue} />
             <Reveal delay={150} className="mt-12">
               <div className="overflow-hidden">
                 <img
@@ -395,86 +395,51 @@ function Invitation() {
             <Reveal className="mt-16">
               <h3 className="script text-3xl text-primary">Getting to Jamshedpur</h3>
             </Reveal>
-            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-8 grid gap-6 md:grid-cols-2">
               {[
                 {
-                  t: "Nearest airport",
-                  d: "Birsa Munda Airport, Ranchi (IXR) — 130 km away, about 3 hours by road.",
+                  t: "By flight",
+                  icon: "✈",
+                  steps: [
+                    { k: "Land", d: "Birsa Munda Airport, Ranchi (IXR)" },
+                    { k: "~3 hrs", d: "Pre-booked cab, Ranchi → Jamshedpur (130 km)" },
+                    { k: "Arrive", d: "Hill View Resort, Jamshedpur" },
+                  ],
                 },
                 {
-                  t: "Nearest railway station",
-                  d: "Tatanagar Junction (TATA) — well connected to Kolkata, Delhi, Mumbai and Ranchi.",
-                },
-                {
-                  t: "Distance to venue",
-                  d: "Approximately 12 km from Tatanagar Junction to Hill View Resort.",
-                },
-                {
-                  t: "Travel time",
-                  d: "25–35 minutes from the station · about 3 hours by road from Ranchi airport.",
-                },
-                {
-                  t: "Recommended options",
-                  d: "Pre-booked cabs from Ranchi, or the Steel Express / Howrah trains into Tatanagar.",
-                },
-                {
-                  t: "Directions",
-                  d: "Open live Google Maps directions to the resort gate.",
-                  link: mapsDirections,
+                  t: "By train",
+                  icon: "🚆",
+                  steps: [
+                    { k: "Arrive", d: "Tatanagar Junction (TATA) — direct trains from Kolkata, Delhi, Mumbai & Ranchi" },
+                    { k: "25–35 min", d: "Cab or auto from the station (~12 km)" },
+                    { k: "Arrive", d: "Hill View Resort, Jamshedpur" },
+                  ],
                 },
               ].map((c, i) => (
-                <Reveal key={c.t} delay={i * 80}>
+                <Reveal key={c.t} delay={i * 100}>
                   <div className="card-organic h-full px-6 py-8">
-                    <h4 className="text-[0.6rem] tracking-[0.3em] text-muted-foreground uppercase">
+                    <h4 className="flex items-center gap-2 text-[0.65rem] tracking-[0.3em] text-muted-foreground uppercase">
+                      <span className="text-lg" aria-hidden>{c.icon}</span>
                       {c.t}
                     </h4>
-                    <p className="mt-3 text-sm leading-relaxed text-foreground/80">{c.d}</p>
-                    {c.link ? (
-                      <a
-                        href={c.link}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="mt-4 inline-block text-[0.58rem] tracking-[0.24em] text-primary uppercase underline underline-offset-4"
-                      >
-                        Open in maps
-                      </a>
-                    ) : null}
+                    <ol className="mt-6 space-y-5 border-l-2 border-dashed border-primary/30 pl-6">
+                      {c.steps.map((s, j) => (
+                        <li key={j} className="relative">
+                          <span className="absolute -left-[31px] top-1 h-3 w-3 rounded-full bg-primary" />
+                          <p className="hand text-xl text-primary">{s.k}</p>
+                          <p className="text-sm leading-relaxed text-foreground/80">{s.d}</p>
+                        </li>
+                      ))}
+                    </ol>
                   </div>
                 </Reveal>
               ))}
             </div>
-
-
-
-
-            <Reveal className="mt-20">
-              <h3 className="script text-3xl text-primary">Getting around</h3>
+            <Reveal className="mt-8 text-center">
+              <a href={mapsDirections} target="_blank" rel="noreferrer" className="btn-quiet">
+                Get directions to the resort
+              </a>
             </Reveal>
-            <div className="mt-8 grid gap-6 sm:grid-cols-3">
-              {[
-                {
-                  t: "Cabs & taxis",
-                  d: "Ola and Uber run through the city; the family desk can arrange pre-booked cabs for both days.",
-                },
-                {
-                  t: "Local transport",
-                  d: "Autos are plentiful and inexpensive within Bistupur, Sakchi and Kadma.",
-                },
-                {
-                  t: "Travel tips",
-                  d: "November evenings are cool — carry a light shawl. Keep some cash handy for autos.",
-                },
-              ].map((c, i) => (
-                <Reveal key={c.t} delay={i * 90}>
-                  <div className="card-organic h-full px-6 py-8">
-                    <h4 className="text-[0.6rem] tracking-[0.3em] text-muted-foreground uppercase">
-                      {c.t}
-                    </h4>
-                    <p className="mt-3 text-sm leading-relaxed text-foreground/80">{c.d}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
           </div>
         </section>
 

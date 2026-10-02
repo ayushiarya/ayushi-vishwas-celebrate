@@ -86,7 +86,7 @@ export const FOOD_SPOTS: Spot[] = [
   { name: "Brubeck Bakery", tag: "Bakery", text: "Patties, cream rolls and a strong cup of chai.", link: "https://www.google.com/maps/search/Brubeck+Bakery+Jamshedpur" },
   { name: "The Moon", tag: "Dinner", text: "A Jamshedpur favourite for a big family table.", link: "https://www.google.com/maps/search/The+Moon+restaurant+Jamshedpur" },
   { name: "Bistupur Khau Gali", tag: "Street food", text: "Go hungry, go late evening, try everything.", link: "https://www.google.com/maps/search/Khau+Gali+Bistupur+Jamshedpur" },
-  { name: "Chappan Bhog", tag: "Sweets", text: "Mithai boxes — carry one home, please.", link: "https://www.google.com/maps/search/Chappan+Bhog+Jamshedpur" },
+  { name: "Chappan Bhog", tag: "Sweets", text: "Jamshedpur's go-to for fresh mithai and namkeen.", link: "https://www.google.com/maps/search/Chappan+Bhog+Jamshedpur" },
 ];
 
 export const mapsDirections = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
