@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { COUPLE } from "@/lib/wedding";
+import { Bunting } from "@/components/Bunting";
 import {
   HeartDoodle,
   MarigoldDoodle,
   SparkleDoodle,
   StarDoodle,
+  SquiggleDoodle,
 } from "@/components/Doodles";
 
 type Phase = "closed" | "opening" | "letter" | "gone";
@@ -43,17 +45,31 @@ export function Envelope({ onDone }: { onDone: () => void }) {
 
   return (
     <div
-      className={`fixed inset-0 z-[60] flex items-center justify-center overflow-hidden bg-ivory px-5 transition-opacity duration-700 ${
+      className={`fixed inset-0 z-[60] flex items-center justify-center overflow-hidden px-5 transition-opacity duration-700 ${
         phase === "letter" ? "opacity-0" : "opacity-100"
       }`}
-      style={{ perspective: "1400px" }}
+      style={{
+        perspective: "1400px",
+        background:
+          "radial-gradient(60% 45% at 15% 10%, color-mix(in oklab, var(--peach) 34%, transparent), transparent 70%)," +
+          "radial-gradient(55% 40% at 85% 18%, color-mix(in oklab, var(--lavender) 30%, transparent), transparent 70%)," +
+          "radial-gradient(60% 45% at 12% 85%, color-mix(in oklab, var(--sage) 28%, transparent), transparent 70%)," +
+          "radial-gradient(55% 40% at 88% 88%, color-mix(in oklab, var(--rose) 30%, transparent), transparent 70%)," +
+          "var(--ivory)",
+      }}
     >
+      {/* festive bunting across the top */}
+      <Bunting className="absolute inset-x-0 top-0 opacity-90" />
+
       {/* scattered doodles */}
-      <SparkleDoodle className="absolute left-[10%] top-[20%] w-8 text-gold/70 twinkle" />
-      <StarDoodle className="absolute right-[12%] top-[28%] w-6 text-lavender twinkle" />
-      <HeartDoodle className="absolute bottom-[14%] left-[14%] w-7 text-rose/70 twinkle" />
-      <MarigoldDoodle className="absolute bottom-[18%] right-[10%] w-10 text-mustard/70 float-slow" />
-      <MarigoldDoodle className="absolute left-[8%] top-[45%] w-8 text-rose/50 float-slow" />
+      <SparkleDoodle className="absolute left-[10%] top-[24%] w-8 text-gold twinkle" />
+      <StarDoodle className="absolute right-[12%] top-[32%] w-6 text-lavender twinkle" />
+      <HeartDoodle className="absolute bottom-[16%] left-[12%] w-7 text-rose twinkle" />
+      <MarigoldDoodle className="absolute bottom-[20%] right-[10%] w-10 text-mustard float-slow" />
+      <MarigoldDoodle className="absolute left-[7%] top-[50%] w-8 text-sage/80 float-slow" />
+      <HeartDoodle className="absolute right-[7%] top-[56%] w-6 text-peach float-slow" />
+      <SparkleDoodle className="absolute left-[22%] bottom-[8%] w-5 text-lavender twinkle" />
+      <SquiggleDoodle className="absolute right-[20%] top-[14%] w-16 text-rose/60 rotate-6" />
 
       {/* the postcard */}
       <div
@@ -79,8 +95,12 @@ export function Envelope({ onDone }: { onDone: () => void }) {
 
           {/* hand-drawn stamp, top right */}
           <div
-            className="absolute right-5 top-5 flex h-20 w-16 rotate-6 flex-col items-center justify-center border-2 bg-card p-1 sm:right-6 sm:top-6"
-            style={{ borderColor: "color-mix(in oklab, var(--wine) 70%, transparent)" }}
+            className="absolute right-5 top-5 flex h-20 w-16 rotate-6 flex-col items-center justify-center border-2 p-1 sm:right-6 sm:top-6"
+            style={{
+              borderColor: "color-mix(in oklab, var(--wine) 70%, transparent)",
+              background:
+                "linear-gradient(160deg, color-mix(in oklab, var(--rose) 16%, var(--card)), color-mix(in oklab, var(--mustard) 16%, var(--card)))",
+            }}
           >
             <div
               className="flex h-full w-full flex-col items-center justify-center border"
@@ -101,9 +121,20 @@ export function Envelope({ onDone }: { onDone: () => void }) {
           <div className="py-2 text-center">
             <h1 className="poster-title text-4xl leading-tight tracking-tight sm:text-5xl">
               {COUPLE.bride}
-              <span className="block py-1 text-2xl text-gold">♡</span>
+              <span className="flex items-center justify-center gap-2 py-1">
+                <SparkleDoodle className="w-4 text-gold" />
+                <span className="text-2xl text-gold">♡</span>
+                <SparkleDoodle className="w-4 text-gold" />
+              </span>
               {COUPLE.groom}
             </h1>
+            <div className="mt-2 flex items-center justify-center gap-3" aria-hidden>
+              <MarigoldDoodle className="w-5 text-mustard" />
+              <HeartDoodle className="w-4 text-rose" />
+              <StarDoodle className="w-4 text-lavender" />
+              <HeartDoodle className="w-4 text-sage" />
+              <MarigoldDoodle className="w-5 text-mustard" />
+            </div>
           </div>
 
           {/* address lines + tap target */}
