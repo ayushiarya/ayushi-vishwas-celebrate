@@ -119,7 +119,6 @@ export function Envelope({ onDone }: { onDone: () => void }) {
               </div>
             ))}
           </div>
-          </div>
 
           {/* invite line */}
           <p className="hand mt-2 -rotate-2 text-2xl text-wine/80">
