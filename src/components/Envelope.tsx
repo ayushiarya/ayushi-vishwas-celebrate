@@ -15,11 +15,12 @@ export function Envelope({ onDone }: { onDone: () => void }) {
   const [phase, setPhase] = useState<Phase>("closed");
 
   useEffect(() => {
-    document.body.style.overflow = "hidden";
+    const locked = phase === "closed" || phase === "opening";
+    document.body.style.overflow = locked ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
-  }, []);
+  }, [phase]);
 
   useEffect(() => {
     if (phase === "opening") {
@@ -46,7 +47,7 @@ export function Envelope({ onDone }: { onDone: () => void }) {
   return (
     <div
       className={`fixed inset-0 z-[60] flex items-center justify-center overflow-hidden px-5 transition-opacity duration-700 ${
-        phase === "letter" ? "opacity-0" : "opacity-100"
+        phase === "letter" ? "pointer-events-none opacity-0" : "opacity-100"
       }`}
       style={{
         perspective: "1400px",
