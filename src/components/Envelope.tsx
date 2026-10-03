@@ -81,7 +81,7 @@ export function Envelope({ onDone }: { onDone: () => void }) {
         style={{ transformStyle: "preserve-3d" }}
       >
         <div
-          className="relative flex aspect-[4/3] flex-col justify-between overflow-hidden border-2 bg-card p-6 shadow-[12px_14px_0_color-mix(in_oklab,var(--wine)_12%,transparent)] transition-transform duration-500 hover:rotate-1 sm:p-8"
+          className="relative flex min-h-[21rem] flex-col justify-between overflow-hidden border-2 bg-card p-6 shadow-[12px_14px_0_color-mix(in_oklab,var(--wine)_12%,transparent)] transition-transform duration-500 hover:rotate-1 sm:min-h-[24rem] sm:p-8"
           style={{ borderColor: "color-mix(in oklab, var(--wine) 70%, transparent)" }}
         >
           {/* hand-drawn doodle border */}
@@ -159,10 +159,11 @@ export function Envelope({ onDone }: { onDone: () => void }) {
               aria-label="Open the invitation"
               className="group relative"
             >
-              <span className="absolute inset-0 animate-ping rounded-full border-2 border-wine opacity-20" />
+              <span className="absolute inset-0 animate-ping rounded-full border-4 border-wine opacity-25" />
+              <span className="absolute -inset-2.5 rounded-full bg-gold/25 blur-md" aria-hidden />
               <svg
                 viewBox="0 0 100 100"
-                className="relative h-20 w-20 drop-shadow-lg transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110 group-active:scale-95"
+                className="relative h-24 w-24 drop-shadow-xl transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110 group-active:scale-95 sm:h-[6.5rem] sm:w-[6.5rem]"
               >
                 <defs>
                   <radialGradient id="wax" cx="38%" cy="32%" r="70%">

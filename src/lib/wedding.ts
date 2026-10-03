@@ -23,6 +23,7 @@ export type WeddingEvent = {
   time: string;
   description: string;
   dressCode: string;
+  palette: string[]; // outfit colour swatches shown on the event card
   start: string; // ISO with IST offset
   end: string;
 };
@@ -38,6 +39,7 @@ export const EVENTS: WeddingEvent[] = [
     description:
       "Turmeric, marigolds and laughter under the morning sun — the first blessing of the celebration.",
     dressCode: "Yellows & whites, easy cottons",
+    palette: ["#F4C430", "#F7E8B5", "#FDFBF3", "#E9B44C"],
     start: "2026-11-24T10:30:00+05:30",
     end: "2026-11-24T13:30:00+05:30",
   },
@@ -50,7 +52,8 @@ export const EVENTS: WeddingEvent[] = [
     time: "7:00 PM onwards",
     description:
       "An evening of music, dholak beats and the exchange of rings — dance shoes strongly advised.",
-    dressCode: "Festive Indian, jewel tones",
+    dressCode: "Bright, Bold & Ready to dance",
+    palette: ["#D81E5B", "#7B2FBE", "#0FA3B1", "#F5B301", "#FF6F3C"],
     start: "2026-11-24T19:00:00+05:30",
     end: "2026-11-24T23:30:00+05:30",
   },
@@ -63,7 +66,8 @@ export const EVENTS: WeddingEvent[] = [
     time: "7:00 PM onwards",
     description:
       "Seven vows around the sacred fire, beneath the hills — the moment everything begins.",
-    dressCode: "Traditional formals",
+    dressCode: "Festive Indian",
+    palette: ["#B3122E", "#D4AF37", "#8A1538", "#FFF8E7"],
     start: "2026-11-25T19:00:00+05:30",
     end: "2026-11-26T00:00:00+05:30",
   },
