@@ -159,10 +159,11 @@ export function Envelope({ onDone }: { onDone: () => void }) {
               aria-label="Open the invitation"
               className="group relative"
             >
-              <span className="absolute inset-0 animate-ping rounded-full border-2 border-wine opacity-20" />
+              <span className="absolute inset-0 animate-ping rounded-full border-4 border-wine opacity-25" />
+              <span className="absolute -inset-3 rounded-full bg-gold/25 blur-md" aria-hidden />
               <svg
                 viewBox="0 0 100 100"
-                className="relative h-20 w-20 drop-shadow-lg transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110 group-active:scale-95"
+                className="relative h-28 w-28 drop-shadow-xl transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110 group-active:scale-95 sm:h-32 sm:w-32"
               >
                 <defs>
                   <radialGradient id="wax" cx="38%" cy="32%" r="70%">

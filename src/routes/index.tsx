@@ -265,6 +265,16 @@ function Invitation() {
                               Dress code
                             </dt>
                             <dd className="font-display text-lg text-primary">{e.dressCode}</dd>
+                            <dd className="mt-2 flex items-center justify-center gap-1.5" aria-label="Outfit colour palette">
+                              {e.palette.map((c) => (
+                                <span
+                                  key={c}
+                                  className="h-4 w-4 rounded-full border border-foreground/10 shadow-sm"
+                                  style={{ backgroundColor: c }}
+                                  title={c}
+                                />
+                              ))}
+                            </dd>
                           </div>
                         </dl>
 
@@ -293,7 +303,7 @@ function Invitation() {
             <SectionHeading
               eyebrow="The countdown begins"
               title="Shaadi Loading…"
-              note="the aunties are already packing"
+              note="the baraat is warming up"
             />
 
             <div className="mt-14">
