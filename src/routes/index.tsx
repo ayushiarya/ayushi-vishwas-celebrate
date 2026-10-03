@@ -265,7 +265,7 @@ function Invitation() {
                               Dress code
                             </dt>
                             <dd className="font-display text-lg text-primary">{e.dressCode}</dd>
-                            <dd className="mt-2 flex items-center justify-center gap-1.5" aria-label="Outfit colour palette">
+                            <dd className="mt-2 flex flex-wrap items-center justify-center gap-1.5" aria-label="Outfit colour palette">
                               {e.palette.map((c) => (
                                 <span
                                   key={c}
