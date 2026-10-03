@@ -110,7 +110,7 @@ export function Weather() {
 
       <p className="mt-10 text-center font-display text-xl italic text-primary/80">
         {failed
-          ? "Forecast arrives closer to the day — expect gentle winter sun."
+          ? "Forecast arrives closer to the day. Expect gentle winter sun."
           : "A little sunshine, a little celebration, and a lot of love."}
       </p>
     </div>

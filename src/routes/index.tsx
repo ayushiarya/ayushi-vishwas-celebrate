@@ -420,8 +420,8 @@ function Invitation() {
                   t: "By train",
                   icon: "🚆",
                   steps: [
-                    { k: "Arrive", d: "Tatanagar Junction (TATA) — direct trains from Kolkata, Delhi, Mumbai & Ranchi" },
-                    { k: "25–35 min", d: "Cab or auto from the station (~12 km)" },
+                    { k: "Arrive", d: "Tatanagar Junction (TATA), with direct trains from Kolkata, Delhi, Mumbai & Ranchi" },
+                    { k: "25 to 35 min", d: "Cab or auto from the station (~12 km)" },
                     { k: "Arrive", d: "Hill View Resort, Jamshedpur" },
                   ],
                 },
