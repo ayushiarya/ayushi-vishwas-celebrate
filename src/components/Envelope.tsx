@@ -15,8 +15,31 @@ export function Envelope({ onDone }: { onDone: () => void }) {
   const [phase, setPhase] = useState<Phase>("closed");
 
   useEffect(() => {
+    // Always begin the invitation at the top, ignoring any prior scroll
+    // position or #anchor the browser would otherwise restore to.
+    const prevRestoration = window.history.scrollRestoration;
+    try {
+      window.history.scrollRestoration = "manual";
+    } catch {
+      /* not supported */
+    }
+    if (window.location.hash) {
+      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
+    window.scrollTo(0, 0);
+    return () => {
+      try {
+        window.history.scrollRestoration = prevRestoration;
+      } catch {
+        /* not supported */
+      }
+    };
+  }, []);
+
+  useEffect(() => {
     const locked = phase === "closed" || phase === "opening";
     document.body.style.overflow = locked ? "hidden" : "";
+    if (!locked) window.scrollTo(0, 0);
     return () => {
       document.body.style.overflow = "";
     };
