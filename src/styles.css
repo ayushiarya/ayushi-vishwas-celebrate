@@ -96,6 +96,10 @@
 
   html {
     scroll-behavior: smooth;
+    /* Reserve the scrollbar gutter so locking/unlocking body scroll
+       (e.g. the envelope intro) no longer shifts fixed/centered content. */
+    scrollbar-gutter: stable;
+    overflow-x: hidden;
   }
 
   body {
@@ -112,6 +116,7 @@
       radial-gradient(circle at 85% 90%, color-mix(in oklab, var(--antique-gold) 12%, transparent), transparent 50%);
     background-attachment: fixed;
     position: relative;
+    overflow-x: hidden;
   }
 
   /* Watermark effect */
