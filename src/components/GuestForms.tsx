@@ -44,7 +44,7 @@ export function RsvpForm() {
       email: d.email,
     });
     setBusy(false);
-    if (err) return setError("Something went wrong — please try again.");
+    if (err) return setError("Something went wrong. Please try again.");
     setDone(true);
   }
 
@@ -120,7 +120,7 @@ export function GuestMessageForm() {
     setBusy(true);
     const { error: err } = await supabase.from("guest_messages").insert(parsed.data);
     setBusy(false);
-    if (err) return setError("Something went wrong — please try again.");
+    if (err) return setError("Something went wrong. Please try again.");
     setDone(true);
   }
 

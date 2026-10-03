@@ -37,7 +37,7 @@ export const EVENTS: WeddingEvent[] = [
     partOfDay: "Morning",
     time: "10:30 AM onwards",
     description:
-      "Turmeric, marigolds and laughter under the morning sun — the first blessing of the celebration.",
+      "Turmeric, marigolds and laughter under the morning sun, the first blessing of the celebration.",
     dressCode: "Yellows & whites, easy cottons",
     palette: ["#F4C430", "#F7E8B5", "#FDFBF3", "#E9B44C"],
     start: "2026-11-24T10:30:00+05:30",
@@ -51,7 +51,7 @@ export const EVENTS: WeddingEvent[] = [
     partOfDay: "Evening",
     time: "7:00 PM onwards",
     description:
-      "An evening of music, dholak beats and the exchange of rings — dance shoes strongly advised.",
+      "An evening of music, dholak beats and the exchange of rings. Dance shoes strongly advised.",
     dressCode: "Bright, Bold & Ready to dance",
     palette: ["#0E7C7B", "#5F0F40", "#9A031E", "#E36414", "#1B998B", "#7B2FBE"],
     start: "2026-11-24T19:00:00+05:30",
@@ -65,7 +65,7 @@ export const EVENTS: WeddingEvent[] = [
     partOfDay: "Evening",
     time: "7:00 PM onwards",
     description:
-      "Seven vows around the sacred fire, beneath the hills — the moment everything begins.",
+      "Seven vows around the sacred fire beneath the hills, the moment everything begins.",
     dressCode: "Festive Indian",
     palette: ["#B3122E", "#D4AF37", "#8A1538", "#FFF8E7", "#E36414", "#5F0F40", "#C9A227"],
     start: "2026-11-25T19:00:00+05:30",
@@ -82,7 +82,7 @@ export type Spot = {
 
 export const PLACES_TO_VISIT: Spot[] = [
   { name: "Jubilee Park", tag: "Evening lights", text: "Musical fountains, rose gardens and paani-puri carts at the gate.", link: "https://www.google.com/maps/search/Jubilee+Park+Jamshedpur" },
-  { name: "Jamshedpur Link Roads + Marine Drive", tag: "Long drive", text: "Tree-lined roads and the riverside Marine Drive — best at sunset.", link: "https://www.google.com/maps/search/Marine+Drive+Jamshedpur" },
+  { name: "Jamshedpur Link Roads + Marine Drive", tag: "Long drive", text: "Tree-lined roads and the riverside Marine Drive, best at sunset.", link: "https://www.google.com/maps/search/Marine+Drive+Jamshedpur" },
   { name: "Dalma Wildlife Sanctuary & Lake", tag: "Hills & water", text: "A winding drive up the Dalma range, with the lake waiting at its foot.", link: "https://www.google.com/maps/search/Dalma+Wildlife+Sanctuary" },
 ];
 
@@ -109,7 +109,7 @@ export function calendarLink(event: WeddingEvent) {
   const fmt = (iso: string) => new Date(iso).toISOString().replace(/[-:]|\.\d{3}/g, "");
   const params = new URLSearchParams({
     action: "TEMPLATE",
-    text: `${event.name} — ${COUPLE.bride} & ${COUPLE.groom}`,
+    text: `${COUPLE.bride} & ${COUPLE.groom}: ${event.name}`,
     dates: `${fmt(event.start)}/${fmt(event.end)}`,
     details: event.description,
     location: COUPLE.venueAddress,
