@@ -296,33 +296,6 @@ function Invitation() {
             </div>
           </div>
         </section>
-        {/* COUNTDOWN */}
-        <section className="relative overflow-hidden px-5 py-24 sm:py-32">
-          <Petals count={8} opacity={0.3} />
-          <div className="relative mx-auto max-w-4xl">
-            <SectionHeading
-              eyebrow="The countdown begins"
-              title="Shaadi Loading…"
-              note="the baraat is warming up"
-            />
-
-            <div className="mt-14">
-              <Reveal>
-                <Countdown />
-              </Reveal>
-            </div>
-            <Reveal delay={200}>
-              <p className="mt-10 text-center font-display text-xl italic text-primary/80">
-                25th November · Evening · Wedding Ceremony
-              </p>
-              <p className="mt-2 text-center text-[0.62rem] tracking-[0.3em] text-muted-foreground uppercase">
-                {COUPLE.venue}, {COUPLE.city}
-              </p>
-            </Reveal>
-          </div>
-        </section>
-
-
         {/* VENUE */}
         <section id="venue" className="px-5 py-24 sm:py-32">
           <div className="mx-auto max-w-6xl">
@@ -542,6 +515,32 @@ function Invitation() {
             </Reveal>
           </div>
         </section>
+        {/* COUNTDOWN */}
+        <section className="relative overflow-hidden px-5 py-24 sm:py-32">
+          <Petals count={8} opacity={0.3} />
+          <div className="relative mx-auto max-w-4xl">
+            <SectionHeading
+              eyebrow="The countdown begins"
+              title="Shaadi Loading…"
+              note="the baraat is warming up"
+            />
+
+            <div className="mt-14">
+              <Reveal>
+                <Countdown />
+              </Reveal>
+            </div>
+            <Reveal delay={200}>
+              <p className="mt-10 text-center font-display text-xl italic text-primary/80">
+                25th November · Evening · Wedding Ceremony
+              </p>
+              <p className="mt-2 text-center text-[0.62rem] tracking-[0.3em] text-muted-foreground uppercase">
+                {COUPLE.venue}, {COUPLE.city}
+              </p>
+            </Reveal>
+          </div>
+        </section>
+
       </main>
     </div>
   );
