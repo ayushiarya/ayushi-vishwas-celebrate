@@ -23,6 +23,7 @@ export type WeddingEvent = {
   time: string;
   description: string;
   dressCode: string;
+  palette: string[]; // outfit colour swatches shown on the event card
   start: string; // ISO with IST offset
   end: string;
 };
