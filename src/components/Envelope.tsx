@@ -81,7 +81,7 @@ export function Envelope({ onDone }: { onDone: () => void }) {
         style={{ transformStyle: "preserve-3d" }}
       >
         <div
-          className="relative flex aspect-[4/3] flex-col justify-between overflow-hidden border-2 bg-card p-6 shadow-[12px_14px_0_color-mix(in_oklab,var(--wine)_12%,transparent)] transition-transform duration-500 hover:rotate-1 sm:p-8"
+          className="relative flex min-h-[21rem] flex-col justify-between overflow-hidden border-2 bg-card p-6 shadow-[12px_14px_0_color-mix(in_oklab,var(--wine)_12%,transparent)] transition-transform duration-500 hover:rotate-1 sm:min-h-[24rem] sm:p-8"
           style={{ borderColor: "color-mix(in oklab, var(--wine) 70%, transparent)" }}
         >
           {/* hand-drawn doodle border */}
