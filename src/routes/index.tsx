@@ -195,13 +195,16 @@ function Invitation() {
                       <StarDoodle className="absolute left-5 top-10 w-4 text-sage twinkle" />
 
                       <div className="relative">
-                        <p className="text-center text-xs tracking-[0.34em] text-muted-foreground uppercase">
-                          <span className="text-xl font-extrabold tracking-normal text-primary">
+                        <div className="text-center">
+                          <p className="font-display text-5xl font-semibold leading-none text-primary">
                             {e.day}
-                            {e.daySuffix}
-                          </span>{" "}
-                          · {e.partOfDay}
-                        </p>
+                            <span className="align-super text-2xl">{e.daySuffix}</span>
+                            <span className="ml-1 text-3xl font-normal italic">November</span>
+                          </p>
+                          <p className="mt-2 text-[0.62rem] font-medium tracking-[0.42em] text-rose uppercase">
+                            {e.partOfDay}
+                          </p>
+                        </div>
                         <h3 className="script mt-2 text-center text-3xl text-primary">{e.name}</h3>
                         <DoodleDivider className="mt-4" />
                         <p className="mt-5 text-center text-sm leading-relaxed text-muted-foreground">
