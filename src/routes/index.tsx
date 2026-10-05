@@ -8,6 +8,7 @@ import { Countdown } from "@/components/Countdown";
 import { Weather } from "@/components/Weather";
 import { Bunting, FilmiMarquee } from "@/components/Bunting";
 import { Envelope } from "@/components/Envelope";
+import { DressSwatches } from "@/components/DressSwatches";
 import { ScrollProgress } from "@/components/ScrollProgress";
 
 
@@ -265,16 +266,7 @@ function Invitation() {
                               Dress code
                             </dt>
                             <dd className="font-display text-lg text-primary">{e.dressCode}</dd>
-                            <dd className="mt-2 flex flex-wrap items-center justify-center gap-1.5" aria-label="Outfit colour palette">
-                              {e.palette.map((c) => (
-                                <span
-                                  key={c}
-                                  className="h-4 w-4 rounded-full border border-foreground/10 shadow-sm"
-                                  style={{ backgroundColor: c }}
-                                  title={c}
-                                />
-                              ))}
-                            </dd>
+                            <DressSwatches colors={e.palette} names={e.paletteNames} />
                           </div>
                         </dl>
 
