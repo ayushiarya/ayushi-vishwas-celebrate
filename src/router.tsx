@@ -8,7 +8,10 @@ export const getRouter = () => {
   const router = createRouter({
     routeTree,
     context: { queryClient },
-    scrollRestoration: true,
+    // Disabled: this is a single-route page, so scroll restoration only
+    // mis-fires — it snaps the window back to the top when lazy content
+    // (the venue image / map) loads mid-scroll.
+    scrollRestoration: false,
     defaultPreloadStaleTime: 0,
   });
 
