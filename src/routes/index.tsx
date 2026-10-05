@@ -269,7 +269,7 @@ function Invitation() {
                               Dress code
                             </dt>
                             <dd className="font-display text-lg text-primary">{e.dressCode}</dd>
-                            <DressSwatches colors={e.palette} names={e.paletteNames} />
+                            <DressSwatches colors={e.palette} />
                           </div>
                         </dl>
 

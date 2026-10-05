@@ -1,13 +1,11 @@
 // Outfit colour palette shown as fabric swatches on a clothesline,
-// like a shelf in a sari shop — each swatch hangs from a pin with a
-// handwritten name underneath.
+// like a shelf in a sari shop — each swatch hangs from a pin.
 
 type DressSwatchesProps = {
   colors: string[];
-  names: string[];
 };
 
-export function DressSwatches({ colors, names }: DressSwatchesProps) {
+export function DressSwatches({ colors }: DressSwatchesProps) {
   return (
     <div
       aria-label="Outfit colour palette"
@@ -29,14 +27,6 @@ export function DressSwatches({ colors, names }: DressSwatchesProps) {
               }`}
               style={{ backgroundColor: c }}
             />
-            {/* handwritten name */}
-            <span
-              className={`hand mt-1 text-center text-[0.55rem] leading-tight text-muted-foreground ${
-                i % 2 === 1 ? "rotate-2" : "-rotate-2"
-              }`}
-            >
-              {names[i]}
-            </span>
           </div>
         ))}
       </div>
