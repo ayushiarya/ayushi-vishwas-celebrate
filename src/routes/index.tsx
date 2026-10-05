@@ -8,7 +8,6 @@ import { Countdown } from "@/components/Countdown";
 import { Weather } from "@/components/Weather";
 import { Bunting, FilmiMarquee } from "@/components/Bunting";
 import { Envelope } from "@/components/Envelope";
-import { DressSwatches } from "@/components/DressSwatches";
 import { ScrollProgress } from "@/components/ScrollProgress";
 
 
@@ -269,7 +268,6 @@ function Invitation() {
                               Dress code
                             </dt>
                             <dd className="font-display text-lg text-primary">{e.dressCode}</dd>
-                            <DressSwatches colors={e.palette} />
                           </div>
                         </dl>
 
