@@ -37,9 +37,12 @@ export function Envelope({ onDone }: { onDone: () => void }) {
   }, []);
 
   useEffect(() => {
+    // Lock scrolling only while the envelope is closed/opening. The mount
+    // effect already pins the page to the top, so when we unlock at the
+    // reveal the hero is at the top — we must NOT force-scroll again here,
+    // or a later phase change would yank the guest back up mid-scroll.
     const locked = phase === "closed" || phase === "opening";
     document.body.style.overflow = locked ? "hidden" : "";
-    if (!locked) window.scrollTo(0, 0);
     return () => {
       document.body.style.overflow = "";
     };
