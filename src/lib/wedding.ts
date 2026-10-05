@@ -53,7 +53,7 @@ export const EVENTS: WeddingEvent[] = [
     description:
       "An evening of music, dholak beats and the exchange of rings. Dance shoes strongly advised.",
     dressCode: "Bright, Bold & Ready to dance",
-    palette: ["#0E7C7B", "#5F0F40", "#9A031E", "#E36414", "#1B998B", "#7B2FBE"],
+    palette: ["#EC3B8E", "#7B2FBE", "#2563EB", "#0E7C7B", "#FF6F61", "#F9C6D9", "#CFE0F7"],
     start: "2026-11-24T19:00:00+05:30",
     end: "2026-11-24T23:30:00+05:30",
   },
@@ -67,7 +67,7 @@ export const EVENTS: WeddingEvent[] = [
     description:
       "Seven vows around the sacred fire beneath the hills, the moment everything begins.",
     dressCode: "Festive Indian",
-    palette: ["#B3122E", "#D4AF37", "#8A1538", "#FFF8E7", "#E36414", "#5F0F40", "#C9A227"],
+    palette: ["#B3122E", "#8A1538", "#0E7C7B", "#D4AF37", "#B4530A", "#1F2A52", "#FFF8E7"],
     start: "2026-11-25T19:00:00+05:30",
     end: "2026-11-26T00:00:00+05:30",
   },
