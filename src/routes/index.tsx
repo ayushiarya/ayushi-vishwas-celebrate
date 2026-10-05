@@ -147,9 +147,6 @@ function Invitation() {
 
             <Reveal delay={800} className="mt-10">
               <DoodleDivider />
-              <p className="mt-5 text-[0.65rem] tracking-[0.34em] text-muted-foreground uppercase">
-                {COUPLE.city}, {COUPLE.state}
-              </p>
             </Reveal>
           </div>
           <a href="#events" aria-label="Continue" className="absolute bottom-6 left-1/2 -translate-x-1/2 text-primary/60 animate-bounce">
