@@ -198,8 +198,8 @@ function Invitation() {
                       <StarDoodle className="absolute left-5 top-10 w-4 text-sage twinkle" />
 
                       <div className="relative">
-                        <p className="text-center text-[0.6rem] tracking-[0.34em] text-muted-foreground uppercase">
-                          <span className="font-bold text-primary">
+                        <p className="text-center text-xs tracking-[0.34em] text-muted-foreground uppercase">
+                          <span className="text-xl font-extrabold tracking-normal text-primary">
                             {e.day}
                             {e.daySuffix}
                           </span>{" "}
