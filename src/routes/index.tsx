@@ -261,7 +261,7 @@ function Invitation() {
                   width={1445}
                   height={1088}
                   loading="lazy"
-                  className="h-[46vh] w-full object-cover transition-transform duration-[2000ms] hover:scale-[1.04] sm:h-[62vh]"
+                  className="h-[46svh] w-full object-cover transition-transform duration-[2000ms] hover:scale-[1.04] sm:h-[62svh]"
                 />
               </div>
             </Reveal>
