@@ -237,8 +237,11 @@ function Invitation() {
 
                       <div className="relative">
                         <p className="text-center text-[0.6rem] tracking-[0.34em] text-muted-foreground uppercase">
-                          {e.day}
-                          {e.daySuffix} · {e.partOfDay}
+                          <span className="font-bold text-primary">
+                            {e.day}
+                            {e.daySuffix}
+                          </span>{" "}
+                          · {e.partOfDay}
                         </p>
                         <h3 className="script mt-2 text-center text-3xl text-primary">{e.name}</h3>
                         <DoodleDivider className="mt-4" />
