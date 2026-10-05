@@ -152,7 +152,7 @@ function Invitation() {
               </p>
             </Reveal>
           </div>
-          <a href="#save-the-date" aria-label="Continue" className="absolute bottom-6 left-1/2 -translate-x-1/2 text-primary/60 animate-bounce">
+          <a href="#events" aria-label="Continue" className="absolute bottom-6 left-1/2 -translate-x-1/2 text-primary/60 animate-bounce">
             <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 5v14M6 13l6 6 6-6" /></svg>
           </a>
         </section>
@@ -165,43 +165,6 @@ function Invitation() {
             "Two days of pure filmi",
           ]}
         />
-
-
-
-        {/* SAVE THE DATE */}
-        <section id="save-the-date" className="relative overflow-hidden px-5 py-24 sm:py-32">
-          <div className="wash-sage pointer-events-none absolute inset-0 opacity-60" />
-          <div className="relative mx-auto max-w-4xl">
-            <SectionHeading
-              eyebrow="Save the date"
-              title="Date Note Kar Lijiye"
-              note="no excuses, we checked your calendar"
-            />
-
-            <Reveal delay={120} className="mt-12">
-              <div className="filmi-banner relative mx-auto max-w-2xl px-6 py-12 text-center">
-                <MarigoldDoodle className="absolute -left-4 -top-5 w-12 text-mustard float-slow" />
-                <MarigoldDoodle className="absolute -right-4 -bottom-5 w-12 text-mustard float-slow" />
-                <p className="eyebrow">Mark your calendars</p>
-                <p className="script mt-3 text-5xl leading-[1.05] text-primary sm:text-7xl">
-                  24<sup className="font-display text-2xl text-gold">th</sup> &amp; 25
-                  <sup className="font-display text-2xl text-gold">th</sup>
-                  <span className="mt-1 block">November</span>
-                </p>
-                <div className="mt-4 flex items-center justify-center gap-3 text-rose">
-                  <HeartDoodle className="w-4" />
-                  <span className="text-[0.6rem] tracking-[0.32em] text-muted-foreground uppercase">
-                    {COUPLE.venue}, {COUPLE.city}
-                  </span>
-                  <HeartDoodle className="w-4" />
-                </div>
-              </div>
-            </Reveal>
-
-
-          </div>
-        </section>
-
 
 
 
