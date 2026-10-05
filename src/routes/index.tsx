@@ -379,6 +379,33 @@ function Invitation() {
           </div>
         </section>
 
+        {/* RSVP */}
+        <section id="rsvp" className="relative overflow-hidden px-5 py-24 sm:py-32">
+          <div className="wash-blush pointer-events-none absolute inset-0 opacity-50" />
+          <div className="relative mx-auto max-w-xl">
+            <SectionHeading eyebrow="RSVP" title="Aa Rahe Ho Na?" />
+            <Reveal className="mt-12">
+              <RsvpForm />
+            </Reveal>
+          </div>
+        </section>
+
+        {/* GUEST MESSAGE */}
+        <section id="message" className="relative overflow-hidden px-5 py-24 sm:py-32">
+          <Petals count={10} opacity={0.4} />
+          <div className="relative mx-auto max-w-xl">
+            <Reveal className="text-center">
+              <h2 className="script text-4xl text-primary sm:text-5xl">Leave a little piece of you here 💌</h2>
+              <p className="mt-4 font-display text-lg italic text-muted-foreground">
+                Something for us to read, laugh about, cry over and keep forever.
+              </p>
+              <DoodleDivider className="mt-5" />
+            </Reveal>
+            <Reveal className="mt-12">
+              <GuestMessageForm />
+            </Reveal>
+          </div>
+        </section>
         {/* WHILE YOU'RE HERE */}
         <section id="while-here" className="relative overflow-hidden px-5 py-24 sm:py-32">
           <div className="wash-lavender pointer-events-none absolute inset-0 opacity-50" />
@@ -441,33 +468,6 @@ function Invitation() {
           </div>
         </section>
 
-        {/* RSVP */}
-        <section id="rsvp" className="relative overflow-hidden px-5 py-24 sm:py-32">
-          <div className="wash-blush pointer-events-none absolute inset-0 opacity-50" />
-          <div className="relative mx-auto max-w-xl">
-            <SectionHeading eyebrow="RSVP" title="Aa Rahe Ho Na?" />
-            <Reveal className="mt-12">
-              <RsvpForm />
-            </Reveal>
-          </div>
-        </section>
-
-        {/* GUEST MESSAGE */}
-        <section id="message" className="relative overflow-hidden px-5 py-24 sm:py-32">
-          <Petals count={10} opacity={0.4} />
-          <div className="relative mx-auto max-w-xl">
-            <Reveal className="text-center">
-              <h2 className="script text-4xl text-primary sm:text-5xl">Leave a little piece of you here 💌</h2>
-              <p className="mt-4 font-display text-lg italic text-muted-foreground">
-                Something for us to read, laugh about, cry over and keep forever.
-              </p>
-              <DoodleDivider className="mt-5" />
-            </Reveal>
-            <Reveal className="mt-12">
-              <GuestMessageForm />
-            </Reveal>
-          </div>
-        </section>
         {/* COUNTDOWN */}
         <section className="relative overflow-hidden px-5 py-24 sm:py-32">
           <Petals count={8} opacity={0.3} />
